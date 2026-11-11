@@ -8,16 +8,12 @@
 @font-face{font-family:"Inter";src:url("../../public/assets/fonts/inter-latin-wght-normal.woff2") format("woff2");font-weight:100 900}
 *{box-sizing:border-box;margin:0}
 body{width:3240px;height:1350px;overflow:hidden;font-family:Inter,sans-serif;color:#f6f4ec}
-.deck{position:relative;display:flex;width:3240px;height:1350px;background:
-  radial-gradient(760px 760px at 540px 430px, rgba(18,61,43,.95) 0%, rgba(18,61,43,0) 70%),
-  radial-gradient(820px 820px at 1700px 620px, rgba(18,61,43,.95) 0%, rgba(18,61,43,0) 70%),
-  radial-gradient(760px 760px at 2760px 520px, rgba(18,61,43,.95) 0%, rgba(18,61,43,0) 70%),
-  #09291d}
+.deck{position:relative;display:flex;width:3240px;height:1350px;background:linear-gradient(90deg,rgba(9,41,29,0) 55%,rgba(9,41,29,.42) 100%),linear-gradient(180deg,rgba(9,41,29,.6) 0%,rgba(9,41,29,.5) 45%,rgba(9,41,29,.72) 100%),url("bg-panorama.jpg") center/cover,#09291d}
 .slide{position:relative;flex:none;width:1080px;height:1350px;padding:96px 96px 0}
 .logo{display:block;width:340px;height:auto}
 .eyebrow{display:flex;align-items:center;gap:16px;font-size:26px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#a6ce39}
 .eyebrow::before{content:"";width:44px;height:5px;border-radius:5px;background:#a6ce39}
-h1,h2{font-family:"Noto Serif",serif;font-weight:400;letter-spacing:-.03em;color:#f6f4ec}
+h1,h2{font-family:"Noto Serif",serif;font-weight:400;letter-spacing:-.03em;color:#f6f4ec;text-shadow:0 2px 40px rgba(9,41,29,.45)}
 em{font-style:italic;color:#a6ce39}
 .hint{position:absolute;right:96px;bottom:292px;font-size:28px;font-weight:500;color:rgba(246,244,236,.72);letter-spacing:.02em}
 .wave{position:absolute;left:0;bottom:0;width:3240px;height:330px}
@@ -29,7 +25,7 @@ em{font-style:italic;color:#a6ce39}
 .s2 .eyebrow{margin-top:112px}
 .s2 h2{margin-top:30px;font-size:104px;line-height:1.04}
 .rows{position:absolute;left:96px;right:96px;top:520px;display:grid;gap:26px}
-.row{display:flex;align-items:center;gap:36px;height:178px;padding:0 44px;border:1.5px solid rgba(255,255,255,.2);border-radius:46px;background:rgba(255,255,255,.07)}
+.row{display:flex;align-items:center;gap:36px;height:178px;padding:0 44px;border:1.5px solid rgba(255,255,255,.2);border-radius:46px;background:rgba(255,255,255,.12);-webkit-backdrop-filter:blur(20px) saturate(140%);backdrop-filter:blur(20px) saturate(140%)}
 .ico{flex:none;width:92px;height:92px;display:grid;place-items:center;border-radius:50%;border:2px solid rgba(166,206,57,.7);color:#a6ce39}
 .ico svg{width:46px;height:46px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 .row p{font-family:"Noto Serif",serif;font-size:46px;white-space:nowrap;line-height:1.12;letter-spacing:-.02em;color:#f6f4ec}
@@ -38,7 +34,7 @@ em{font-style:italic;color:#a6ce39}
 .s3 .eyebrow{margin-top:112px}
 .s3 h2{margin-top:30px;font-size:112px;line-height:1.04}
 .contact{position:absolute;left:96px;right:96px;top:690px;display:grid;gap:28px}
-.pill{display:flex;align-items:center;gap:30px;height:164px;padding:0 48px;border:1.5px solid rgba(255,255,255,.22);border-radius:82px;background:rgba(255,255,255,.08);font-size:46px;font-weight:500;letter-spacing:-.005em;color:#f6f4ec}
+.pill{display:flex;align-items:center;gap:30px;height:164px;padding:0 48px;border:1.5px solid rgba(255,255,255,.22);border-radius:82px;background:rgba(255,255,255,.12);-webkit-backdrop-filter:blur(20px) saturate(140%);backdrop-filter:blur(20px) saturate(140%);font-size:46px;font-weight:500;letter-spacing:-.005em;color:#f6f4ec}
 .pill.main{background:#a6ce39;border-color:#a6ce39;color:#09291d}
 .pill .ico{width:76px;height:76px;border-color:currentColor;opacity:.95}
 .pill .ico svg{width:40px;height:40px}
