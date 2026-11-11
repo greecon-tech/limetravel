@@ -62,7 +62,7 @@ function readConfig(env = process.env) {
     NO_WHATSAPP: whatsapp ? '' : '1',
     PHONE_TEL: whatsapp ? '+' + whatsapp : '',
     PHONE_DISPLAY: whatsapp === DEFAULT_WHATSAPP ? DEFAULT_PHONE_DISPLAY : whatsapp ? '+' + whatsapp : '',
-    EMAIL: clean(env.CONTACT_EMAIL),
+    EMAIL: env.CONTACT_EMAIL === undefined ? 'info@limetravel.al' : clean(env.CONTACT_EMAIL),
     YEAR: String(new Date().getFullYear()),
   };
 }
