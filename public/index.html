@@ -23,58 +23,49 @@
   }
   </script>
 </head>
-<body data-instagram="{{INSTAGRAM}}" data-whatsapp="{{WHATSAPP}}" data-email="{{EMAIL}}">
+<body class="has-hero" data-instagram="{{INSTAGRAM}}" data-whatsapp="{{WHATSAPP}}" data-email="{{EMAIL}}">
 {{> header}}
 
 <main id="permbajtja">
 
   <!-- Hero -->
   <section class="hero">
-    <svg class="hero__wave" viewBox="0 0 1200 330" preserveAspectRatio="none" aria-hidden="true" focusable="false">
-      <path d="M0 150C170 60 360 60 560 130s420 110 640-30c-150 190-420 210-650 130S150 120 0 150z"/>
-    </svg>
-    <div class="container hero__grid">
-      <div class="hero__copy">
-        <p class="eyebrow" lang="en">Let’s live a little bit</p>
-        <h1 class="display">Udhëto me&nbsp;mendim.</h1>
-        <p class="lead">Udhëtime të menduara me kujdes, nga ideja te kthimi. Ne merremi me detajet — datat, hotelin, fluturimin, kushtet — që ju të keni kohë të gëzoni atë që vjen pas.</p>
-        <div class="hero__cta">
-          <a class="btn btn--primary" href="#kerkese">Kërko ofertë
-            <svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#arrow"/></svg>
-          </a>
-          <a class="btn btn--ghost" href="#si-punojme">Si punojmë</a>
-        </div>
-        <p class="hero__note">Pa detyrim. Çmimi final konfirmohet pas verifikimit të disponueshmërisë.</p>
-      </div>
+    <img class="bg-img" src="/assets/img/hero-1000.webp" width="1000" height="667" alt="" fetchpriority="high" decoding="async">
+    <div class="bg-shade" aria-hidden="true"></div>
+    <p class="hero__credit">Imazh ilustrues</p>
 
-      <aside class="proposal" aria-labelledby="proposal-title">
-        <div class="proposal__head">
-          <span class="proposal__dot" aria-hidden="true"></span>
-          <h2 id="proposal-title">Çfarë gjeni në çdo propozim</h2>
-        </div>
-        <ul class="proposal__list">
-          <li>
-            <svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#price"/></svg>
-            <div><strong>Çmimi total</strong><span>Për kë është dhe për sa udhëtarë.</span></div>
-          </li>
-          <li>
-            <svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#plus"/></svg>
-            <div><strong>Çfarë përfshihet</strong><span>Netët, hoteli, transporti, bagazhi.</span></div>
-          </li>
-          <li>
-            <svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#minus"/></svg>
-            <div><strong>Çfarë nuk përfshihet</strong><span>E shkruar qartë, jo me shkronja të vogla.</span></div>
-          </li>
-          <li>
-            <svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#clock"/></svg>
-            <div><strong>Afati i vlefshmërisë</strong><span>Deri kur vlen propozimi.</span></div>
-          </li>
-          <li>
-            <svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#shield"/></svg>
-            <div><strong>Kushtet</strong><span>Pagesa, ndryshimet dhe anulimi.</span></div>
-          </li>
-        </ul>
-      </aside>
+    <div class="container hero__content">
+      <p class="badge" lang="en">Let’s live a little bit</p>
+      <h1 class="display">Udhëto me <em>mendim</em>.</h1>
+      <p class="lead">Udhëtime të menduara me kujdes, nga ideja te kthimi. Ne merremi me detajet — datat, hotelin, fluturimin, kushtet — që ju të keni kohë të gëzoni atë që vjen pas.</p>
+      <div class="hero__cta hero__cta--center">
+        <a class="btn btn--primary" href="#kerkese">Kërko ofertë
+          <svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#arrow"/></svg>
+        </a>
+        <a class="btn btn--glass" href="#si-punojme">Si punojmë</a>
+      </div>
+      <p class="hero__note">Pa detyrim. Çmimi final konfirmohet pas verifikimit të disponueshmërisë.</p>
+    </div>
+
+    <div class="container hero__strip">
+      <ul class="glass-strip" aria-label="Çfarë gjeni në çdo propozim">
+        <li>
+          <svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#price"/></svg>
+          <div><strong>Çmimi total</strong><span>Për kë është dhe për sa udhëtarë.</span></div>
+        </li>
+        <li>
+          <svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#plus"/></svg>
+          <div><strong>Çfarë përfshihet</strong><span>Netët, hoteli, transporti, bagazhi.</span></div>
+        </li>
+        <li>
+          <svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#minus"/></svg>
+          <div><strong>Çfarë nuk përfshihet</strong><span>E shkruar qartë, jo me shkronja të vogla.</span></div>
+        </li>
+        <li>
+          <svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#shield"/></svg>
+          <div><strong>Kushtet dhe afati</strong><span>Pagesa, anulimi dhe vlefshmëria.</span></div>
+        </li>
+      </ul>
     </div>
   </section>
 
@@ -349,12 +340,14 @@
 
   <!-- Mbyllja -->
   <section class="closing" aria-labelledby="closing-title">
+    <img class="bg-img" src="/assets/img/hero-1000.webp" width="1000" height="667" alt="" loading="lazy" decoding="async">
+    <div class="bg-shade" aria-hidden="true"></div>
     <div class="container reveal">
       <h2 id="closing-title" class="display display--sm">Ku do t’ju çonte një fundjavë e lirë?</h2>
       <p class="lead">Zgjidhni datat; ne ju ndihmojmë të gjeni kombinimin e duhur të fluturimit dhe qëndrimit.</p>
       <div class="hero__cta hero__cta--center">
         <a class="btn btn--primary" href="#kerkese">Kërko ofertë</a>
-        <a class="btn btn--ghost" href="https://www.instagram.com/{{INSTAGRAM}}/" rel="noopener" target="_blank">
+        <a class="btn btn--glass" href="https://www.instagram.com/{{INSTAGRAM}}/" rel="noopener" target="_blank">
           <svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#instagram"/></svg>
           @{{INSTAGRAM}}
         </a>

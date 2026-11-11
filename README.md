@@ -68,5 +68,5 @@ email-i shfaqen kur konfigurohen variablat përkatëse.
 ## Për t'u plotësuar nga ekipi
 
 - Logoja është nxjerrë nga imazhet konceptuale; zëvendësojeni me masterin vektor (SVG) kur të jetë gati (`public/assets/img/wordmark-*`, `icon-*`).
-- Faqja nuk ka fotografi: shtoni foto autentike me të drejta përdorimi kur t'i keni.
+- Foto e kreut dhe e mbylljes: `public/assets/img/hero-2000.webp` dhe `hero-1000.webp`. Zëvendësojeni me foto të licencuar, pa watermark, me të njëjtin emër skedari.
 - Tekstet e proceseve dhe zotimeve vijnë nga Doktrina; verifikojini kundrejt shërbimit real para publikimit.
