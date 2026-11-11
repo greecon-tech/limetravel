@@ -38,6 +38,7 @@ Kërkon Node 20 ose më të ri.
 | --- | --- | --- |
 | `SITE_URL` | `https://www.limetravel.al` | URL kanonike, sitemap, Open Graph |
 | `INSTAGRAM_HANDLE` | `limetravel.al` | Lidhjet e Instagramit |
+| `LINKEDIN_URL` | `https://www.linkedin.com/company/limetravel-al` | Lidhja e LinkedIn te fundi i faqes |
 | `WHATSAPP_NUMBER` | `355695397514` | Numri i WhatsApp-it dhe telefonit; kanali kryesor i kontaktit (vetëm shifra, me prefiks shteti). Vlera bosh e çaktivizon |
 | `CONTACT_EMAIL` | bosh | Shfaq butonin “Dërgo me email” |
 

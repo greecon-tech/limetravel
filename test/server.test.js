@@ -91,5 +91,6 @@ test('WhatsApp-i zyrtar është kanali kryesor si parazgjedhje', async (t) => {
   assert.ok(home.includes('https://wa.me/355695397514?text='));
   assert.ok(home.includes('"telephone": "+355695397514"'));
   const privacy = await (await get(server, '/privatesia')).text();
+  assert.ok(privacy.includes('https://www.linkedin.com/company/limetravel-al'));
   assert.ok(privacy.includes('tel:+355695397514') && privacy.includes('+355 69 539 7514'));
 });

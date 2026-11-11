@@ -57,6 +57,7 @@ function readConfig(env = process.env) {
   return {
     SITE_URL: (clean(env.SITE_URL) || 'https://www.limetravel.al').replace(/\/+$/, ''),
     INSTAGRAM: (clean(env.INSTAGRAM_HANDLE) || 'limetravel.al').replace(/^@/, ''),
+    LINKEDIN: clean(env.LINKEDIN_URL) || 'https://www.linkedin.com/company/limetravel-al',
     WHATSAPP: whatsapp,
     NO_WHATSAPP: whatsapp ? '' : '1',
     PHONE_TEL: whatsapp ? '+' + whatsapp : '',
