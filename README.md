@@ -43,6 +43,15 @@ Kërkon Node 20 ose më të ri.
 
 `PORT` vendoset nga Railway.
 
+## Publikimi në Netlify
+
+`netlify.toml` është gati: Netlify ekzekuton `node build.js`, i cili shkruan faqet e
+renderuara në `dist/`, dhe i publikon bashkë me header-at e sigurisë.
+
+1. Netlify → **Add new project** → **Import an existing project** → zgjidhni këtë repo dhe degën.
+2. Cilësimet e ndërtimit lexohen nga `netlify.toml`; mos i ndryshoni.
+3. Variablat e tabelës më sipër vendosen te **Project configuration → Environment variables**; pas ndryshimit duhet një deploy i ri.
+
 ## Si funksionon formulari
 
 Formulari i kërkesës nuk dërgon asgjë te serveri. Ai përgatit një mesazh të

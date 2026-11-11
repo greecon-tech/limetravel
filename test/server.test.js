@@ -68,3 +68,18 @@ test('kanalet opsionale shfaqen vetëm kur konfigurohen', async (t) => {
 test('render i shpëton vlerat', () => {
   assert.strictEqual(render('<a title="{{X}}">', { X: '"><script>' }, {}), '<a title="&quot;&gt;&lt;script&gt;">');
 });
+
+test('ndërtimi statik prodhon faqe të renderuara', () => {
+  const fs = require('node:fs');
+  const os = require('node:os');
+  const path = require('node:path');
+  const { build } = require('../build');
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'lt-'));
+  assert.ok(build(dir) > 10);
+  for (const page of ['index.html', 'doktrina.html', 'privatesia.html', '404.html']) {
+    const html = fs.readFileSync(path.join(dir, page), 'utf8');
+    assert.ok(!/\{\{/.test(html), page);
+    assert.match(html, /class="footer"/);
+  }
+  fs.rmSync(dir, { recursive: true, force: true });
+});
