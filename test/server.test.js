@@ -55,7 +55,7 @@ test('header sigurie, kompresim dhe ETag', async (t) => {
 });
 
 test('kanalet opsionale shfaqen vetëm kur konfigurohen', async (t) => {
-  const bare = await listen({});
+  const bare = await listen({ WHATSAPP_NUMBER: '' });
   const full = await listen({ WHATSAPP_NUMBER: '+355 69 000 0000', CONTACT_EMAIL: 'info@example.com', SITE_URL: 'https://example.com/' });
   t.after(() => { bare.close(); full.close(); });
   const a = await (await get(bare, '/')).text();
@@ -82,4 +82,14 @@ test('ndërtimi statik prodhon faqe të renderuara', () => {
     assert.match(html, /class="footer"/);
   }
   fs.rmSync(dir, { recursive: true, force: true });
+});
+
+test('WhatsApp-i zyrtar është kanali kryesor si parazgjedhje', async (t) => {
+  const server = await listen({});
+  t.after(() => server.close());
+  const home = await (await get(server, '/')).text();
+  assert.ok(home.includes('https://wa.me/355695397514?text='));
+  assert.ok(home.includes('"telephone": "+355695397514"'));
+  const privacy = await (await get(server, '/privatesia')).text();
+  assert.ok(privacy.includes('tel:+355695397514') && privacy.includes('+355 69 539 7514'));
 });

@@ -38,7 +38,7 @@ Kërkon Node 20 ose më të ri.
 | --- | --- | --- |
 | `SITE_URL` | `https://www.limetravel.al` | URL kanonike, sitemap, Open Graph |
 | `INSTAGRAM_HANDLE` | `limetravel.al` | Lidhjet e Instagramit |
-| `WHATSAPP_NUMBER` | bosh | Shfaq butonin “Dërgo në WhatsApp” (vetëm shifra, me prefiks shteti) |
+| `WHATSAPP_NUMBER` | `355695397514` | Numri i WhatsApp-it dhe telefonit; kanali kryesor i kontaktit (vetëm shifra, me prefiks shteti). Vlera bosh e çaktivizon |
 | `CONTACT_EMAIL` | bosh | Shfaq butonin “Dërgo me email” |
 
 `PORT` vendoset nga Railway.

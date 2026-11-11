@@ -50,10 +50,17 @@ function escapeHtml(value) {
 
 function readConfig(env = process.env) {
   const clean = (v) => (v || '').trim();
+  // Numri zyrtar i WhatsApp-it. Mund të ndryshohet me WHATSAPP_NUMBER; vlera bosh e çaktivizon.
+  const DEFAULT_WHATSAPP = '355695397514';
+  const DEFAULT_PHONE_DISPLAY = '+355 69 539 7514';
+  const whatsapp = env.WHATSAPP_NUMBER === undefined ? DEFAULT_WHATSAPP : clean(env.WHATSAPP_NUMBER).replace(/\D/g, '');
   return {
     SITE_URL: (clean(env.SITE_URL) || 'https://www.limetravel.al').replace(/\/+$/, ''),
     INSTAGRAM: (clean(env.INSTAGRAM_HANDLE) || 'limetravel.al').replace(/^@/, ''),
-    WHATSAPP: clean(env.WHATSAPP_NUMBER).replace(/\D/g, ''),
+    WHATSAPP: whatsapp,
+    NO_WHATSAPP: whatsapp ? '' : '1',
+    PHONE_TEL: whatsapp ? '+' + whatsapp : '',
+    PHONE_DISPLAY: whatsapp === DEFAULT_WHATSAPP ? DEFAULT_PHONE_DISPLAY : whatsapp ? '+' + whatsapp : '',
     EMAIL: clean(env.CONTACT_EMAIL),
     YEAR: String(new Date().getFullYear()),
   };

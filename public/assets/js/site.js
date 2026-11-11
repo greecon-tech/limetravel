@@ -202,13 +202,17 @@
     return opened;
   }
 
-  if (config.whatsapp) form.querySelector('[data-send="whatsapp"]').hidden = false;
+  if (config.whatsapp) {
+    form.querySelector('[data-send="whatsapp"]').hidden = false;
+  } else {
+    form.querySelector('[data-send="instagram"]').classList.replace('btn--ghost', 'btn--primary');
+  }
   if (config.email) form.querySelector('[data-send="email"]').hidden = false;
 
   form.addEventListener('input', update);
   form.addEventListener('submit', function (event) {
     event.preventDefault();
-    send('instagram');
+    send(config.whatsapp ? 'whatsapp' : 'instagram');
   });
   form.querySelectorAll('button[data-send]').forEach(function (button) {
     if (button.type === 'submit') return;

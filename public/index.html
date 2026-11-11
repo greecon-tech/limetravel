@@ -19,6 +19,7 @@
     "image": "{{SITE_URL}}/assets/img/og.jpg",
     "slogan": "Udhëto me mendim.",
     "description": "Udhëtime të menduara me kujdes, nga ideja te kthimi.",
+    {{#WHATSAPP}}"telephone": "{{PHONE_TEL}}",{{/WHATSAPP}}
     "sameAs": ["https://www.instagram.com/{{INSTAGRAM}}/"]
   }
   </script>
@@ -39,10 +40,10 @@
       <h1 class="display">Udhëto me <em>mendim</em>.</h1>
       <p class="lead">Udhëtime të menduara me kujdes, nga ideja te kthimi. Ne merremi me detajet — datat, hotelin, fluturimin, kushtet — që ju të keni kohë të gëzoni atë që vjen pas.</p>
       <div class="hero__cta hero__cta--center">
-        <a class="btn btn--primary" href="#kerkese">Kërko ofertë
-          <svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#arrow"/></svg>
-        </a>
-        <a class="btn btn--glass" href="#si-punojme">Si punojmë</a>
+        {{#WHATSAPP}}<a class="btn btn--primary" href="https://wa.me/{{WHATSAPP}}?text=P%C3%ABrsh%C3%ABndetje%20LimeTravel%21%20Do%20t%C3%AB%20doja%20nj%C3%AB%20ofert%C3%AB%20udh%C3%ABtimi." rel="noopener" target="_blank"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#whatsapp"/></svg>Shkruaj në WhatsApp</a>
+        <a class="btn btn--glass" href="#kerkese">Kërko ofertë</a>{{/WHATSAPP}}
+        {{#NO_WHATSAPP}}<a class="btn btn--primary" href="#kerkese">Kërko ofertë</a>
+        <a class="btn btn--glass" href="#si-punojme">Si punojmë</a>{{/NO_WHATSAPP}}
       </div>
       <p class="hero__note">Pa detyrim. Çmimi final konfirmohet pas verifikimit të disponueshmërisë.</p>
     </div>
@@ -280,13 +281,13 @@
         </div>
 
         <div class="field field--full form__actions">
-          <button class="btn btn--primary" type="submit" data-send="instagram">
+          <button class="btn btn--primary" type="submit" data-send="whatsapp" hidden>
+            <svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#whatsapp"/></svg>
+            Dërgo në WhatsApp
+          </button>
+          <button class="btn btn--ghost" type="button" data-send="instagram">
             <svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#instagram"/></svg>
             Kopjo dhe hap Instagram
-          </button>
-          <button class="btn btn--ghost" type="button" data-send="whatsapp" hidden>
-            <svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#send"/></svg>
-            Dërgo në WhatsApp
           </button>
           <button class="btn btn--ghost" type="button" data-send="email" hidden>
             <svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#mail"/></svg>
@@ -312,7 +313,7 @@
       <div class="faq reveal">
         <details>
           <summary>Si e kërkoj një ofertë?</summary>
-          <p>Plotësoni <a href="#kerkese">formularin e kërkesës</a> ose na shkruani në Instagram, <a href="https://www.instagram.com/{{INSTAGRAM}}/" rel="noopener" target="_blank">@{{INSTAGRAM}}</a>. Na ndihmon të dimë destinacionin ose idenë, datat ose fleksibilitetin, numrin e udhëtarëve dhe buxhetin orientues.</p>
+          <p>{{#WHATSAPP}}Na shkruani në <a href="https://wa.me/{{WHATSAPP}}" rel="noopener" target="_blank">WhatsApp ({{PHONE_DISPLAY}})</a>, kanali ynë kryesor, ose plotësoni <a href="#kerkese">formularin e kërkesës</a>.{{/WHATSAPP}}{{#NO_WHATSAPP}}Plotësoni <a href="#kerkese">formularin e kërkesës</a> ose na shkruani në Instagram, <a href="https://www.instagram.com/{{INSTAGRAM}}/" rel="noopener" target="_blank">@{{INSTAGRAM}}</a>.{{/NO_WHATSAPP}} Na ndihmon të dimë destinacionin ose idenë, datat ose fleksibilitetin, numrin e udhëtarëve dhe buxhetin orientues.</p>
         </details>
         <details>
           <summary>Kur është çmimi final?</summary>
@@ -346,7 +347,8 @@
       <h2 id="closing-title" class="display display--sm">Ku do t’ju çonte një fundjavë e lirë?</h2>
       <p class="lead">Zgjidhni datat; ne ju ndihmojmë të gjeni kombinimin e duhur të fluturimit dhe qëndrimit.</p>
       <div class="hero__cta hero__cta--center">
-        <a class="btn btn--primary" href="#kerkese">Kërko ofertë</a>
+        {{#WHATSAPP}}<a class="btn btn--primary" href="https://wa.me/{{WHATSAPP}}?text=P%C3%ABrsh%C3%ABndetje%20LimeTravel%21%20Do%20t%C3%AB%20doja%20nj%C3%AB%20ofert%C3%AB%20udh%C3%ABtimi." rel="noopener" target="_blank"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#whatsapp"/></svg>Shkruaj në WhatsApp</a>{{/WHATSAPP}}
+        {{#NO_WHATSAPP}}<a class="btn btn--primary" href="#kerkese">Kërko ofertë</a>{{/NO_WHATSAPP}}
         <a class="btn btn--glass" href="https://www.instagram.com/{{INSTAGRAM}}/" rel="noopener" target="_blank">
           <svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#instagram"/></svg>
           @{{INSTAGRAM}}

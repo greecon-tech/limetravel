@@ -12,7 +12,8 @@
       <a href="/#pyetje">Pyetje</a>
     </nav>
     <div class="nav__actions">
-      <a class="btn btn--primary btn--sm" href="/#kerkese">Kërko ofertë</a>
+      {{#WHATSAPP}}<a class="btn btn--primary btn--sm" href="https://wa.me/{{WHATSAPP}}?text=P%C3%ABrsh%C3%ABndetje%20LimeTravel%21%20Do%20t%C3%AB%20doja%20nj%C3%AB%20ofert%C3%AB%20udh%C3%ABtimi." rel="noopener" target="_blank"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#whatsapp"/></svg>WhatsApp</a>{{/WHATSAPP}}
+      {{#NO_WHATSAPP}}<a class="btn btn--primary btn--sm" href="/#kerkese">Kërko ofertë</a>{{/NO_WHATSAPP}}
       <button class="nav__toggle" type="button" aria-controls="menu" aria-expanded="false" data-nav-toggle>
         <span class="visually-hidden">Menyja</span>
         <svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#menu"/></svg>
