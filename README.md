@@ -1,6 +1,6 @@
 # LimeTravel — faqja zyrtare
 
-Faqja e LimeTravel (*Udhëto me mendim · Let's live a little bit*), ndërtuar sipas
+Faqja e LimeTravel (*Udhëto me shije. Kthehu me kujtime. · Let's live a little bit*), ndërtuar sipas
 Brand Book 1.0 dhe Doktrinës së LimeTravel. Pa varësi të jashtme, pa hap ndërtimi.
 
 ## Struktura

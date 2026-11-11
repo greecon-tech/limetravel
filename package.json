@@ -2,7 +2,7 @@
   "name": "limetravel-web",
   "version": "1.0.0",
   "private": true,
-  "description": "Faqja zyrtare e LimeTravel — Udhëto me mendim.",
+  "description": "Faqja zyrtare e LimeTravel — Udhëto me shije. Kthehu me kujtime.",
   "type": "commonjs",
   "main": "server.js",
   "scripts": {

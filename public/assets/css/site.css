@@ -548,7 +548,7 @@ a:hover > .link .icon {
 }
 .hero .display {
   color: #fff;
-  font-size: clamp(46px, 8.6vw, 92px);
+  font-size: clamp(35px, 8.6vw, 92px);
   line-height: 1.02;
   text-shadow: 0 2px 36px rgba(9, 41, 29, 0.35);
 }
