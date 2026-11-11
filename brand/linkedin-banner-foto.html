@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="sq">
+<head>
+<meta charset="utf-8">
+<style>
+@font-face{font-family:"Noto Serif";src:url("../public/assets/fonts/noto-serif-latin-wght-normal.woff2") format("woff2");font-weight:100 900;font-style:normal}
+@font-face{font-family:"Noto Serif";src:url("../public/assets/fonts/noto-serif-latin-wght-italic.woff2") format("woff2");font-weight:100 900;font-style:italic}
+@font-face{font-family:"Inter";src:url("../public/assets/fonts/inter-latin-wght-normal.woff2") format("woff2");font-weight:100 900}
+*{box-sizing:border-box;margin:0}
+body{width:1584px;height:396px;overflow:hidden;position:relative;background:#09291d;color:#f6f4ec;font-family:Inter,sans-serif}
+.photo{position:absolute;left:-70px;top:-290px;width:1720px;height:auto}
+.shade{position:absolute;inset:0;background:
+  linear-gradient(90deg, rgba(9,41,29,.30) 0%, rgba(9,41,29,.55) 38%, rgba(9,41,29,.62) 100%),
+  linear-gradient(180deg, rgba(9,41,29,.10) 0%, rgba(9,41,29,.35) 100%)}
+svg{position:absolute;left:0;bottom:0;width:1584px;height:396px}
+.content{position:absolute;left:560px;top:0;height:396px;width:960px;display:flex;flex-direction:column;justify-content:center;gap:22px;padding-bottom:46px}
+.content img{width:520px;height:auto;display:block}
+.tag{font-family:"Noto Serif",serif;font-size:31px;white-space:nowrap;line-height:1.25;letter-spacing:-.01em;color:#f6f4ec;text-shadow:0 2px 20px rgba(9,41,29,.5)}
+.tag em{color:#a6ce39}
+.meta{display:flex;gap:28px;font-size:19px;font-weight:500;color:rgba(246,244,236,.9);letter-spacing:.005em}
+.meta span+span::before{content:"";display:inline-block;width:5px;height:5px;border-radius:50%;background:#a6ce39;margin-right:28px;vertical-align:middle;position:relative;top:-1px}
+</style>
+</head>
+<body>
+<img class="photo" src="../public/assets/img/hero-1000.webp" alt="">
+<div class="shade"></div>
+<svg viewBox="0 0 1584 396" aria-hidden="true">
+  <path d="M0 366 C 230 318 470 334 760 372 S 1290 420 1584 332 C 1300 462 930 436 690 402 S 230 350 0 366 Z" fill="#a6ce39" opacity=".95"/>
+</svg>
+<div class="content">
+  <img src="../public/assets/img/wordmark-reverse-1200.webp" alt="LimeTravel">
+  <p class="tag">Udhëtime të menduara me kujdes, nga ideja te <em>kthimi</em>.</p>
+  <p class="meta"><span>WhatsApp +355 69 539 7514</span><span>@limetravel.al</span><span>limetravel.al</span></p>
+</div>
+</body>
+</html>
