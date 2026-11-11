@@ -181,17 +181,9 @@
       return;
     }
 
-    var opened = null;
-    if (channel === 'instagram') {
-      opened = window.open('https://ig.me/m/' + encodeURIComponent(config.instagram), '_blank', 'noopener');
-    }
     copy(message).then(
       function () {
-        say(
-          channel === 'instagram'
-            ? 'Mesazhi u kopjua. Ngjiteni në bisedën e Instagramit me @' + config.instagram + ' dhe dërgojeni.'
-            : 'Mesazhi u kopjua.'
-        );
+        say('Mesazhi u kopjua. Mund ta ngjisni ku të dëshironi dhe na e dërgoni.');
       },
       function () {
         preview.focus();
@@ -199,20 +191,20 @@
         say('Nuk u kopjua automatikisht. Mesazhi është i përzgjedhur — kopjojeni dhe na e dërgoni.');
       }
     );
-    return opened;
   }
 
-  if (config.whatsapp) {
-    form.querySelector('[data-send="whatsapp"]').hidden = false;
-  } else {
-    form.querySelector('[data-send="instagram"]').classList.replace('btn--ghost', 'btn--primary');
-  }
+  if (config.whatsapp) form.querySelector('[data-send="whatsapp"]').hidden = false;
   if (config.email) form.querySelector('[data-send="email"]').hidden = false;
+  if (!config.whatsapp) {
+    // Pa WhatsApp, butoni i parë i dukshëm bëhet kryesor.
+    var first = config.email ? form.querySelector('[data-send="email"]') : form.querySelector('[data-send="copy"]');
+    first.classList.replace('btn--ghost', 'btn--primary');
+  }
 
   form.addEventListener('input', update);
   form.addEventListener('submit', function (event) {
     event.preventDefault();
-    send(config.whatsapp ? 'whatsapp' : 'instagram');
+    send(config.whatsapp ? 'whatsapp' : config.email ? 'email' : 'copy');
   });
   form.querySelectorAll('button[data-send]').forEach(function (button) {
     if (button.type === 'submit') return;

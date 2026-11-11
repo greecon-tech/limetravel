@@ -220,7 +220,7 @@
           <li><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#check"/></svg>Nëse na duhet më shumë kohë, ju njoftojmë kur do ta keni përgjigjen.</li>
         </ul>
         <noscript>
-          <p class="notice">Formulari kërkon JavaScript. Mund të na shkruani drejtpërdrejt në Instagram: <a href="https://www.instagram.com/{{INSTAGRAM}}/">@{{INSTAGRAM}}</a>.</p>
+          <p class="notice">Formulari kërkon JavaScript. Mund të na shkruani drejtpërdrejt: {{#WHATSAPP}}<a href="https://wa.me/{{WHATSAPP}}">WhatsApp {{PHONE_DISPLAY}}</a>{{/WHATSAPP}}{{#NO_WHATSAPP}}<a href="https://www.instagram.com/{{INSTAGRAM}}/">Instagram @{{INSTAGRAM}}</a>{{/NO_WHATSAPP}}.</p>
         </noscript>
       </div>
 
@@ -285,10 +285,6 @@
           <button class="btn btn--primary" type="submit" data-send="whatsapp" hidden>
             <svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#whatsapp"/></svg>
             Dërgo në WhatsApp
-          </button>
-          <button class="btn btn--ghost" type="button" data-send="instagram">
-            <svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#instagram"/></svg>
-            Kopjo dhe hap Instagram
           </button>
           <button class="btn btn--ghost" type="button" data-send="email" hidden>
             <svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#mail"/></svg>
