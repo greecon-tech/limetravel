@@ -151,3 +151,58 @@ test('ndërtimi statik shkruan faqet e çdo gjuhe', () => {
   }
   fs.rmSync(dir, { recursive: true, force: true });
 });
+
+test('artikujt e blogut janë të vlefshëm dhe të çiftuar sq↔en', () => {
+  const { check } = require('../scripts/check-blog');
+  assert.deepStrictEqual(check(), []);
+});
+
+test('markdown: tituj, lista, tabela, lidhje të sigurta dhe pa {{ }}', () => {
+  const { markdownToHtml } = require('../lib/blog');
+  const { html, headings } = markdownToHtml(
+    '## Pyetja\n\nTekst me **theks**, *kursiv* dhe [lidhje](https://example.com) <script>x</script> {{SITE_URL}}.\n\n- një\n- dy\n\n| A | B |\n|---|---|\n| 1 | 2 |\n\n[keq](javascript:alert(1))\n'
+  );
+  assert.deepStrictEqual(headings, [{ id: 'pyetja', text: 'Pyetja' }]);
+  assert.ok(html.includes('<strong>theks</strong>') && html.includes('<em>kursiv</em>'));
+  assert.ok(html.includes('<a href="https://example.com" rel="noopener">lidhje</a>'));
+  assert.ok(html.includes('&lt;script&gt;') && !html.includes('<script>'));
+  assert.ok(!html.includes('{{') && !html.includes('javascript:'));
+  assert.ok(html.includes('<ul><li>një</li><li>dy</li></ul>') && html.includes('<th scope="col">A</th>'));
+  assert.throws(() => markdownToHtml('# Titull i parë'));
+});
+
+test('blogu: indeksi, artikujt, SEO/AEO, RSS dhe sitemap', async (t) => {
+  const server = await listen({});
+  t.after(() => server.close());
+  const { loadPosts } = require('../lib/blog');
+  const posts = loadPosts();
+  assert.ok(posts.length >= 4);
+  for (const index of ['/blog/', '/en/blog/']) {
+    const res = await get(server, index);
+    assert.strictEqual(res.status, 200, index);
+    const html = await res.text();
+    assert.ok(html.includes('"@type":"Blog"') && html.includes('type="application/rss+xml"'), index);
+    assert.ok(!/\{\{/.test(html), index);
+  }
+  assert.strictEqual((await get(server, '/blog')).status, 301);
+  for (const post of posts) {
+    const url = (post.lang === 'sq' ? '/blog/' : '/en/blog/') + post.slug;
+    const res = await get(server, url);
+    assert.strictEqual(res.status, 200, url);
+    const html = await res.text();
+    assert.ok(html.includes('"@type":"BlogPosting"') && html.includes('"@type":"FAQPage"') && html.includes('"@type":"BreadcrumbList"'), url);
+    assert.ok(html.includes(`<link rel="canonical" href="https://www.limetravel.al${url}">`), url);
+    assert.ok(html.includes('hreflang="sq"') && html.includes('hreflang="en"') && html.includes('hreflang="x-default"'), url);
+    assert.ok(html.includes('og:type" content="article"'), url);
+    assert.ok(html.includes('class="summary"') && html.includes('class="post__sources"'), url);
+    assert.ok(!/\{\{/.test(html), `placeholder te ${url}`);
+  }
+  const feed = await (await get(server, '/en/blog/feed.xml')).text();
+  assert.ok(feed.includes('<rss') && feed.includes('/en/blog/etias-ees-albanian-citizens'));
+  const sitemap = await (await get(server, '/sitemap.xml')).text();
+  assert.ok(sitemap.includes('/blog/etias-ees-shqiptaret-cfare-ndryshon') && sitemap.includes('<lastmod>'));
+  const home = await (await get(server, '/')).text();
+  assert.ok(home.includes('blog-latest-title') && home.includes('href="/blog/"'));
+  const it = await (await get(server, '/it/')).text();
+  assert.ok(it.includes('href="/en/blog/"') && !it.includes('blog-latest-title'));
+});

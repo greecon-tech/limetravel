@@ -7,6 +7,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const zlib = require('node:zlib');
 const crypto = require('node:crypto');
+const blog = require('./lib/blog');
 
 const PUBLIC_DIR = path.join(__dirname, 'public');
 const PAGES_DIR = path.join(__dirname, 'pages');
@@ -146,44 +147,40 @@ function pageUrl(lang, pageId) {
 
 const urlToFile = (url) => (url.endsWith('/') ? url + 'index.html' : url + '.html');
 
-function languageMenu(active, current, pageId, dict) {
-  if (active.length < 2) return '';
-  const target = pageId === 'notfound' ? 'home' : pageId;
-  const items = active
-    .map((lang) => {
+function languageMenu(items, current, dict) {
+  if (items.length < 2) return '';
+  const links = items
+    .map(({ lang, href }) => {
       const here = lang.code === current.code ? ' aria-current="true"' : '';
-      return `<li><a href="${pageUrl(lang, target)}" hreflang="${lang.code}" lang="${lang.code}"${here}>${escapeHtml(lang.name)}</a></li>`;
+      return `<li><a href="${href}" hreflang="${lang.code}" lang="${lang.code}"${here}>${escapeHtml(lang.name)}</a></li>`;
     })
     .join('');
   return (
     `<details class="lang" data-lang><summary aria-label="${escapeHtml(translate(dict, 'ui.language'))}">` +
     '<svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#globe"/></svg>' +
-    `<span>${current.code.toUpperCase()}</span></summary><ul>${items}</ul></details>`
+    `<span>${current.code.toUpperCase()}</span></summary><ul>${links}</ul></details>`
   );
 }
 
-function hreflangLinks(active, pageId, siteUrl) {
-  if (pageId === 'notfound' || active.length < 2) return '';
-  const links = active.map(
-    (lang) => `<link rel="alternate" hreflang="${lang.code}" href="${siteUrl}${pageUrl(lang, pageId)}">`
-  );
-  const fallback = active.find((l) => l.code === DEFAULT_LANG) || active[0];
-  links.push(`<link rel="alternate" hreflang="x-default" href="${siteUrl}${pageUrl(fallback, pageId)}">`);
+// list: [{ code, url }] — lidhjet hreflang (me x-default) të një faqeje dhe versioneve të saj
+function alternateLinks(list, siteUrl, fallbackCode) {
+  if (list.length < 2) return '';
+  const links = list.map((a) => `<link rel="alternate" hreflang="${a.code}" href="${siteUrl}${a.url}">`);
+  const fallback = list.find((a) => a.code === fallbackCode) || list[0];
+  links.push(`<link rel="alternate" hreflang="x-default" href="${siteUrl}${fallback.url}">`);
   return links.join('\n  ');
 }
 
-function sitemapXml(active, siteUrl) {
-  const fallback = active.find((l) => l.code === DEFAULT_LANG) || active[0];
-  const entries = [];
-  for (const page of PAGES.filter((p) => p.id !== 'notfound')) {
-    const alternates =
-      active
-        .map((l) => `<xhtml:link rel="alternate" hreflang="${l.code}" href="${siteUrl}${pageUrl(l, page.id)}"/>`)
-        .join('') + `<xhtml:link rel="alternate" hreflang="x-default" href="${siteUrl}${pageUrl(fallback, page.id)}"/>`;
-    for (const lang of active) {
-      entries.push(`  <url><loc>${siteUrl}${pageUrl(lang, page.id)}</loc>${alternates}</url>`);
-    }
-  }
+function sitemapEntry(siteUrl, list, self, fallbackCode, lastmod) {
+  const alts =
+    list.length < 2
+      ? ''
+      : list.map((a) => `<xhtml:link rel="alternate" hreflang="${a.code}" href="${siteUrl}${a.url}"/>`).join('') +
+        `<xhtml:link rel="alternate" hreflang="x-default" href="${siteUrl}${(list.find((a) => a.code === fallbackCode) || list[0]).url}"/>`;
+  return `  <url><loc>${siteUrl}${self}</loc>${lastmod ? `<lastmod>${lastmod}</lastmod>` : ''}${alts}</url>`;
+}
+
+function sitemapXml(entries) {
   return (
     '<?xml version="1.0" encoding="UTF-8"?>\n' +
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' +
@@ -222,36 +219,114 @@ function buildSite(config = readConfig()) {
   };
   walk(PUBLIC_DIR);
 
-  // Faqet, për çdo gjuhë
-  for (const lang of active) {
-    const dict = { ...base, ...(lang.code === DEFAULT_LANG ? {} : readLocale(lang.code)) };
+  // Blogu: vetëm artikujt e publikuar, në gjuhët që kanë faqe të përkthyera
+  const posts = blog.loadPosts().filter((p) => blog.isPublished(p));
+  const blogLangs = active.filter((l) => blog.BLOG_LANGS.includes(l.code));
+  const blogFallback = blogLangs.find((l) => l.code === 'en') || blogLangs[0];
+
+  const dicts = {};
+  for (const lang of active) dicts[lang.code] = { ...base, ...(lang.code === DEFAULT_LANG ? {} : readLocale(lang.code)) };
+
+  const contextFor = (lang, url, extra = {}) => {
+    const dict = dicts[lang.code];
     const js = Object.fromEntries(
       Object.entries(dict)
         .filter(([key]) => key.startsWith('js.'))
         .map(([key, value]) => [key.slice(3), value])
     );
+    const ownBlog = blogLangs.find((l) => l.code === lang.code);
+    return {
+      ...config,
+      LANG: lang.code,
+      OG_LOCALE: lang.og,
+      OG_TYPE: 'website',
+      HOME: pageUrl(lang, 'home'),
+      P_DOCTRINE: pageUrl(lang, 'doctrine'),
+      P_PRIVACY: pageUrl(lang, 'privacy'),
+      P_BLOG: blogFallback ? blog.blogIndexUrl((ownBlog || blogFallback).code) : '/',
+      BLOG_LATEST: ownBlog ? blog.latestSection(lang.code, posts, config.SITE_URL) : '',
+      CANONICAL: config.SITE_URL + url,
+      WA_TEXT: encodeURIComponent(dict['js.greeting']),
+      STRINGS_JSON: JSON.stringify(js),
+      ...extra,
+    };
+  };
+  const addPage = (url, source, ctx, dict) => {
+    const file = urlToFile(url);
+    files.set(file, makeAsset(file, Buffer.from(render(source, ctx, partials, dict)), '.html'));
+  };
+
+  for (const lang of active) {
+    const dict = dicts[lang.code];
     for (const page of PAGES) {
       const url = pageUrl(lang, page.id);
-      const ctx = {
-        ...config,
-        LANG: lang.code,
-        OG_LOCALE: lang.og,
-        HOME: pageUrl(lang, 'home'),
-        P_DOCTRINE: pageUrl(lang, 'doctrine'),
-        P_PRIVACY: pageUrl(lang, 'privacy'),
-        CANONICAL: config.SITE_URL + url,
-        HREFLANG: hreflangLinks(active, page.id, config.SITE_URL),
-        LANG_MENU: languageMenu(active, lang, page.id, dict),
-        WA_TEXT: encodeURIComponent(dict['js.greeting']),
-        STRINGS_JSON: JSON.stringify(js),
-      };
-      const source = fs.readFileSync(path.join(PAGES_DIR, page.file), 'utf8');
-      const file = urlToFile(url);
-      files.set(file, makeAsset(file, Buffer.from(render(source, ctx, partials, dict)), '.html'));
+      const target = page.id === 'notfound' ? 'home' : page.id;
+      const ctx = contextFor(lang, url, {
+        HREFLANG:
+          page.id === 'notfound'
+            ? ''
+            : alternateLinks(active.map((l) => ({ code: l.code, url: pageUrl(l, page.id) })), config.SITE_URL, DEFAULT_LANG),
+        LANG_MENU: languageMenu(active.map((l) => ({ lang: l, href: pageUrl(l, target) })), lang, dict),
+      });
+      addPage(url, fs.readFileSync(path.join(PAGES_DIR, page.file), 'utf8'), ctx, dict);
     }
   }
 
-  files.set('/sitemap.xml', makeAsset('/sitemap.xml', Buffer.from(sitemapXml(active, config.SITE_URL)), '.xml'));
+  for (const lang of blogLangs) {
+    const dict = dicts[lang.code];
+    const indexUrl = blog.blogIndexUrl(lang.code);
+    addPage(
+      indexUrl,
+      blog.indexSource(lang.code, posts, config.SITE_URL),
+      contextFor(lang, indexUrl, {
+        HREFLANG: alternateLinks(blogLangs.map((l) => ({ code: l.code, url: blog.blogIndexUrl(l.code) })), config.SITE_URL, DEFAULT_LANG),
+        LANG_MENU: languageMenu(blogLangs.map((l) => ({ lang: l, href: blog.blogIndexUrl(l.code) })), lang, dict),
+      }),
+      dict
+    );
+    const feed = blog.feedUrl(lang.code);
+    files.set(feed, makeAsset(feed, Buffer.from(blog.feedXml(lang.code, posts, config.SITE_URL)), '.xml'));
+
+    for (const post of posts.filter((p) => p.lang === lang.code)) {
+      const versions = blogLangs.map((l) => ({ lang: l, post: posts.find((p) => p.id === post.id && p.lang === l.code) }));
+      const url = blog.postUrl(post);
+      addPage(
+        url,
+        blog.postSource(post, posts, config.SITE_URL),
+        contextFor(lang, url, {
+          OG_TYPE: 'article',
+          HREFLANG: alternateLinks(
+            versions.filter((v) => v.post).map((v) => ({ code: v.lang.code, url: blog.postUrl(v.post) })),
+            config.SITE_URL,
+            DEFAULT_LANG
+          ),
+          LANG_MENU: languageMenu(
+            versions.map((v) => ({ lang: v.lang, href: v.post ? blog.postUrl(v.post) : blog.blogIndexUrl(v.lang.code) })),
+            lang,
+            dict
+          ),
+        }),
+        dict
+      );
+    }
+  }
+
+  // Sitemap: faqet, blogu dhe artikujt, me alternativat hreflang
+  const entries = [];
+  for (const page of PAGES.filter((p) => p.id !== 'notfound')) {
+    const list = active.map((l) => ({ code: l.code, url: pageUrl(l, page.id) }));
+    for (const a of list) entries.push(sitemapEntry(config.SITE_URL, list, a.url, DEFAULT_LANG));
+  }
+  const indexList = blogLangs.map((l) => ({ code: l.code, url: blog.blogIndexUrl(l.code) }));
+  for (const a of indexList) entries.push(sitemapEntry(config.SITE_URL, indexList, a.url, DEFAULT_LANG, posts.find((p) => p.lang === a.code)?.updated));
+  for (const post of posts) {
+    const list = blogLangs
+      .map((l) => ({ code: l.code, post: posts.find((p) => p.id === post.id && p.lang === l.code) }))
+      .filter((v) => v.post)
+      .map((v) => ({ code: v.code, url: blog.postUrl(v.post) }));
+    entries.push(sitemapEntry(config.SITE_URL, list, blog.postUrl(post), DEFAULT_LANG, post.updated));
+  }
+  files.set('/sitemap.xml', makeAsset('/sitemap.xml', Buffer.from(sitemapXml(entries)), '.xml'));
   return files;
 }
 

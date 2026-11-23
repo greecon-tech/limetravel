@@ -81,3 +81,10 @@ email-i shfaqen kur konfigurohen variablat përkatëse.
 - Logoja është nxjerrë nga imazhet konceptuale; zëvendësojeni me masterin vektor (SVG) kur të jetë gati (`public/assets/img/wordmark-*`, `icon-*`).
 - Foto e kreut dhe e mbylljes: `public/assets/img/hero-2000.webp` dhe `hero-1000.webp`. Zëvendësojeni me foto të licencuar, pa watermark, me të njëjtin emër skedari.
 - Tekstet e proceseve dhe zotimeve vijnë nga Doktrina; verifikojini kundrejt shërbimit real para publikimit.
+
+## Blogu
+
+Artikujt janë në `content/blog/<id>.<sq|en>.md` (front matter JSON + Markdown). Faqja i ndërton vetë: indeksin (`/blog/`, `/en/blog/`),
+artikujt me `BlogPosting`, `FAQPage` dhe `BreadcrumbList` JSON-LD, RSS (`/blog/feed.xml`), sitemap me hreflang dhe seksionin “Të rejat nga blogu” te kryefaqja.
+Rregullat editoriale janë te `content/EDITORIAL.md`, radha e temave te `content/TOPICS.md`, tekstet për rrjetet sociale te `content/social/`.
+Kontrolli i cilësisë: `node scripts/check-blog.js` (e ekzekutojnë edhe testet). Një artikull me `"draft": true` ose datë në të ardhmen nuk shfaqet.
