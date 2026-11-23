@@ -225,5 +225,7 @@
  "js.opening_whatsapp": "Opening WhatsApp with your message ready.",
  "js.opening_email": "Opening your email with your message ready.",
  "js.copied": "Message copied. You can paste it wherever you like and send it to us.",
- "js.copy_failed": "It could not be copied automatically. The message is selected — please copy it and send it to us."
+ "js.copy_failed": "It could not be copied automatically. The message is selected — please copy it and send it to us.",
+ "header.destinacione": "Destinations",
+ "header.aktivitete": "Activities"
 }

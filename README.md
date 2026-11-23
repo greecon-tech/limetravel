@@ -88,3 +88,9 @@ Artikujt janë në `content/blog/<id>.<sq|en>.md` (front matter JSON + Markdown)
 artikujt me `BlogPosting`, `FAQPage` dhe `BreadcrumbList` JSON-LD, RSS (`/blog/feed.xml`), sitemap me hreflang dhe seksionin “Të rejat nga blogu” te kryefaqja.
 Rregullat editoriale janë te `content/EDITORIAL.md`, radha e temave te `content/TOPICS.md`, tekstet për rrjetet sociale te `content/social/`.
 Kontrolli i cilësisë: `node scripts/check-blog.js` (e ekzekutojnë edhe testet). Një artikull me `"draft": true` ose datë në të ardhmen nuk shfaqet.
+
+## Destinacione dhe aktivitete
+
+Faqet janë te `content/guides/<id>.<sq|en>.md` (front matter JSON + Markdown) dhe shfaqen te `/destinacione/`, `/aktivitete/`, `/en/destinations/`, `/en/activities/`.
+Çdo faqe ka “Në një vështrim”, itinerar ideor (destinacionet), vendndodhje me lidhje te OpenStreetMap, FAQ, burime dhe JSON-LD
+(`TouristDestination`, `FAQPage`, `BreadcrumbList`, `TouristTrip`). Kontrolli: `node scripts/check-guides.js`. Shënimet ligjore: `content/LEGAL-NOTES.md`.

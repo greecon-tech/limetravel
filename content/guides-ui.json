@@ -1,0 +1,78 @@
+{
+  "sq": {
+    "destination": {
+      "eyebrow": "Destinacione",
+      "index_title": "Destinacione në Shqipëri — LimeTravel",
+      "index_description": "Destinacione në Shqipëri me të dhëna praktike, ide itineraresh dhe burime zyrtare. Na shkruani për kërkesën tuaj.",
+      "index_h1": "Destinacione në Shqipëri.",
+      "index_lead": "Alpet, bregdeti dhe qytetet e trashëgimisë: informacion praktik, ide itineraresh dhe burime zyrtare. Çmimi dhe disponueshmëria konfirmohen pas verifikimit."
+    },
+    "activity": {
+      "eyebrow": "Aktivitete",
+      "index_title": "Aktivitete në Shqipëri — LimeTravel",
+      "index_description": "Ecje në natyrë, zbulim kulturor dhe aktivitete të tjera në Shqipëri, me informacion praktik dhe burime zyrtare.",
+      "index_h1": "Aktivitete në Shqipëri.",
+      "index_lead": "Mënyra për ta njohur Shqipërinë: ecje në natyrë, qytete trashëgimie dhe më shumë. Çdo faqe ka burime dhe datën e rishikimit."
+    },
+    "kinds": { "destination": "Destinacion", "activity": "Aktivitet" },
+    "glance": "Në një vështrim",
+    "summary": "Shkurt",
+    "contents": "Në këtë faqe",
+    "location": "Vendndodhja",
+    "coordinates": "Koordinatat",
+    "open_map": "Hap në OpenStreetMap",
+    "itinerary_note": "Ky është një itinerar ideor, jo një program i konfirmuar. Datat, çmimi, disponueshmëria dhe kushtet konfirmohen pas verifikimit.",
+    "related": "Të lidhura",
+    "faq": "Pyetje të shpeshta",
+    "sources": "Burimet",
+    "reviewed": "Rishikuar më",
+    "sources_note": "Informacioni rishikohet periodikisht. Orari, tarifat dhe kushtet ndryshojnë; kontrolloni burimin zyrtar ose na pyesni para udhëtimit.",
+    "cta_title": "Doni ta planifikoni këtë udhëtim?",
+    "cta_text": "Na tregoni datat dhe numrin e udhëtarëve. Ju propozojmë opsionet dhe e konfirmojmë çmimin pas verifikimit të disponueshmërisë.",
+    "cta_button": "Shkruaj në WhatsApp",
+    "cta_form": "Plotëso kërkesën",
+    "breadcrumb": "Rruga e faqes",
+    "read_more": "Shiko më shumë",
+    "latest_title": "Destinacione në Shqipëri",
+    "all_destinations": "Të gjitha destinacionet",
+    "wa_text": "Përshëndetje LimeTravel! Më intereson: {title}. Mund të më propozoni opsione?"
+  },
+  "en": {
+    "destination": {
+      "eyebrow": "Destinations",
+      "index_title": "Destinations in Albania — LimeTravel",
+      "index_description": "Destinations in Albania with practical information, itinerary ideas and official sources. Write to us about your request.",
+      "index_h1": "Destinations in Albania.",
+      "index_lead": "The Alps, the coast and the heritage towns: practical information, itinerary ideas and official sources. Price and availability are confirmed after verification."
+    },
+    "activity": {
+      "eyebrow": "Activities",
+      "index_title": "Activities in Albania — LimeTravel",
+      "index_description": "Hiking, cultural discovery and other activities in Albania, with practical information and official sources.",
+      "index_h1": "Activities in Albania.",
+      "index_lead": "Ways to get to know Albania: hiking, heritage towns and more. Every page cites its sources and shows when it was last reviewed."
+    },
+    "kinds": { "destination": "Destination", "activity": "Activity" },
+    "glance": "At a glance",
+    "summary": "In short",
+    "contents": "On this page",
+    "location": "Location",
+    "coordinates": "Coordinates",
+    "open_map": "Open in OpenStreetMap",
+    "itinerary_note": "This is an idea itinerary, not a confirmed programme. Dates, price, availability and conditions are confirmed after verification.",
+    "related": "Related",
+    "faq": "Frequently asked questions",
+    "sources": "Sources",
+    "reviewed": "Last reviewed",
+    "sources_note": "Information is reviewed periodically. Opening times, fees and conditions change; check the official source or ask us before you travel.",
+    "cta_title": "Would you like to plan this trip?",
+    "cta_text": "Tell us your dates and the number of travellers. We propose the options and confirm the price after checking availability.",
+    "cta_button": "Write on WhatsApp",
+    "cta_form": "Send a request",
+    "breadcrumb": "Breadcrumb",
+    "read_more": "See more",
+    "latest_title": "Destinations in Albania",
+    "all_destinations": "All destinations",
+    "wa_text": "Hello LimeTravel! I am interested in: {title}. Could you propose some options?"
+  }
+}

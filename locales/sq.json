@@ -225,5 +225,7 @@
  "js.opening_whatsapp": "Po hapet WhatsApp me mesazhin tuaj gati.",
  "js.opening_email": "Po hapet email-i me mesazhin tuaj gati.",
  "js.copied": "Mesazhi u kopjua. Mund ta ngjisni ku të dëshironi dhe na e dërgoni.",
- "js.copy_failed": "Nuk u kopjua automatikisht. Mesazhi është i përzgjedhur — kopjojeni dhe na e dërgoni."
+ "js.copy_failed": "Nuk u kopjua automatikisht. Mesazhi është i përzgjedhur — kopjojeni dhe na e dërgoni.",
+ "header.destinacione": "Destinacione",
+ "header.aktivitete": "Aktivitete"
 }

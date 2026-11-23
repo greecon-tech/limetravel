@@ -505,7 +505,7 @@ a:hover > .link .icon {
   outline-color: #fff;
 }
 
-@media (max-width: 980px) {
+@media (max-width: 1080px) {
   .nav__toggle {
     display: inline-flex;
   }
@@ -1569,6 +1569,118 @@ a:hover > .link .icon {
 }
 .table-wrap tr:last-child td {
   border-bottom: 0;
+}
+.facts {
+  margin-top: 28px;
+  padding: 22px 26px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--white);
+}
+.facts h2 {
+  margin-bottom: 14px;
+  font: 600 13px/1.3 var(--sans);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--forest);
+}
+.facts dl {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px 28px;
+}
+.facts dt {
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--lime-dark);
+}
+.facts dd {
+  margin-top: 2px;
+  font-size: 16px;
+  line-height: 1.45;
+  color: var(--ink);
+}
+.itinerary,
+.location {
+  margin-top: 56px;
+}
+.itinerary > h2,
+.location > h2 {
+  margin-bottom: 14px;
+  font-size: clamp(24px, 3vw, 30px);
+}
+.itinerary__note {
+  padding: 12px 16px;
+  border: 1px dashed var(--line-strong);
+  border-radius: var(--radius);
+  font-size: 14.5px;
+  color: var(--muted);
+}
+.itinerary__days {
+  margin-top: 28px;
+  counter-reset: day;
+}
+.itinerary__days li {
+  counter-increment: day;
+  position: relative;
+  padding: 0 0 30px 64px;
+}
+.itinerary__days li::before {
+  content: counter(day);
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--forest);
+  color: var(--cream);
+  font: 600 15px/1 var(--sans);
+}
+.itinerary__days li::after {
+  content: "";
+  position: absolute;
+  left: 19px;
+  top: 46px;
+  bottom: 6px;
+  width: 2px;
+  background: var(--line-strong);
+}
+.itinerary__days li:last-child {
+  padding-bottom: 0;
+}
+.itinerary__days li:last-child::after {
+  display: none;
+}
+.itinerary__days h3 {
+  margin-bottom: 6px;
+}
+.itinerary__days p {
+  color: var(--muted);
+}
+.location {
+  padding: 24px 26px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--white);
+}
+.location p + p {
+  margin-top: 8px;
+}
+.location a {
+  color: var(--forest);
+}
+@media (max-width: 600px) {
+  .facts dl {
+    grid-template-columns: 1fr;
+  }
+  .itinerary__days li {
+    padding-left: 56px;
+  }
 }
 .post__faq,
 .post__sources,

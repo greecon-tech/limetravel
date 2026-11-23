@@ -225,5 +225,7 @@
  "js.opening_whatsapp": "WhatsApp wird mit Ihrer vorbereiteten Nachricht geöffnet.",
  "js.opening_email": "Ihr E-Mail-Programm wird mit Ihrer vorbereiteten Nachricht geöffnet.",
  "js.copied": "Nachricht kopiert. Sie können sie einfügen, wo Sie möchten, und uns senden.",
- "js.copy_failed": "Das automatische Kopieren hat nicht funktioniert. Die Nachricht ist markiert – kopieren Sie sie und senden Sie sie uns."
+ "js.copy_failed": "Das automatische Kopieren hat nicht funktioniert. Die Nachricht ist markiert – kopieren Sie sie und senden Sie sie uns.",
+ "header.destinacione": "Reiseziele",
+ "header.aktivitete": "Aktivitäten"
 }

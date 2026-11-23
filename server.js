@@ -8,6 +8,7 @@ const path = require('node:path');
 const zlib = require('node:zlib');
 const crypto = require('node:crypto');
 const blog = require('./lib/blog');
+const guides = require('./lib/guides');
 
 const PUBLIC_DIR = path.join(__dirname, 'public');
 const PAGES_DIR = path.join(__dirname, 'pages');
@@ -224,6 +225,11 @@ function buildSite(config = readConfig()) {
   const blogLangs = active.filter((l) => blog.BLOG_LANGS.includes(l.code));
   const blogFallback = blogLangs.find((l) => l.code === 'en') || blogLangs[0];
 
+  // Destinacione dhe aktivitete
+  const guideList = guides.loadGuides().filter(guides.isPublished);
+  const guideLangs = active.filter((l) => guides.GUIDE_LANGS.includes(l.code));
+  const guideFallback = guideLangs.find((l) => l.code === 'en') || guideLangs[0];
+
   const dicts = {};
   for (const lang of active) dicts[lang.code] = { ...base, ...(lang.code === DEFAULT_LANG ? {} : readLocale(lang.code)) };
 
@@ -235,6 +241,7 @@ function buildSite(config = readConfig()) {
         .map(([key, value]) => [key.slice(3), value])
     );
     const ownBlog = blogLangs.find((l) => l.code === lang.code);
+    const ownGuide = guideLangs.find((l) => l.code === lang.code);
     return {
       ...config,
       LANG: lang.code,
@@ -245,6 +252,9 @@ function buildSite(config = readConfig()) {
       P_PRIVACY: pageUrl(lang, 'privacy'),
       P_BLOG: blogFallback ? blog.blogIndexUrl((ownBlog || blogFallback).code) : '/',
       BLOG_LATEST: ownBlog ? blog.latestSection(lang.code, posts, config.SITE_URL) : '',
+      P_DESTINATIONS: guideFallback ? guides.sectionUrl((ownGuide || guideFallback).code, 'destination') : '/',
+      P_ACTIVITIES: guideFallback ? guides.sectionUrl((ownGuide || guideFallback).code, 'activity') : '/',
+      GUIDES_LATEST: ownGuide ? guides.latestSection(lang.code, guideList) : '',
       CANONICAL: config.SITE_URL + url,
       WA_TEXT: encodeURIComponent(dict['js.greeting']),
       STRINGS_JSON: JSON.stringify(js),
@@ -311,6 +321,43 @@ function buildSite(config = readConfig()) {
     }
   }
 
+  for (const lang of guideLangs) {
+    const dict = dicts[lang.code];
+    for (const kind of guides.KINDS) {
+      const indexUrl = guides.sectionUrl(lang.code, kind);
+      addPage(
+        indexUrl,
+        guides.indexSource(lang.code, kind, guideList, config.SITE_URL),
+        contextFor(lang, indexUrl, {
+          HREFLANG: alternateLinks(guideLangs.map((l) => ({ code: l.code, url: guides.sectionUrl(l.code, kind) })), config.SITE_URL, DEFAULT_LANG),
+          LANG_MENU: languageMenu(guideLangs.map((l) => ({ lang: l, href: guides.sectionUrl(l.code, kind) })), lang, dict),
+        }),
+        dict
+      );
+    }
+    for (const guide of guideList.filter((g) => g.lang === lang.code)) {
+      const versions = guideLangs.map((l) => ({ lang: l, guide: guideList.find((g) => g.id === guide.id && g.lang === l.code) }));
+      const url = guides.guideUrl(guide);
+      addPage(
+        url,
+        guides.guideSource(guide, guideList, config.SITE_URL),
+        contextFor(lang, url, {
+          HREFLANG: alternateLinks(
+            versions.filter((v) => v.guide).map((v) => ({ code: v.lang.code, url: guides.guideUrl(v.guide) })),
+            config.SITE_URL,
+            DEFAULT_LANG
+          ),
+          LANG_MENU: languageMenu(
+            versions.map((v) => ({ lang: v.lang, href: v.guide ? guides.guideUrl(v.guide) : guides.sectionUrl(v.lang.code, guide.kind) })),
+            lang,
+            dict
+          ),
+        }),
+        dict
+      );
+    }
+  }
+
   // Sitemap: faqet, blogu dhe artikujt, me alternativat hreflang
   const entries = [];
   for (const page of PAGES.filter((p) => p.id !== 'notfound')) {
@@ -325,6 +372,17 @@ function buildSite(config = readConfig()) {
       .filter((v) => v.post)
       .map((v) => ({ code: v.code, url: blog.postUrl(v.post) }));
     entries.push(sitemapEntry(config.SITE_URL, list, blog.postUrl(post), DEFAULT_LANG, post.updated));
+  }
+  for (const kind of guides.KINDS) {
+    const list = guideLangs.map((l) => ({ code: l.code, url: guides.sectionUrl(l.code, kind) }));
+    for (const a of list) entries.push(sitemapEntry(config.SITE_URL, list, a.url, DEFAULT_LANG));
+  }
+  for (const guide of guideList) {
+    const list = guideLangs
+      .map((l) => ({ code: l.code, guide: guideList.find((g) => g.id === guide.id && g.lang === l.code) }))
+      .filter((v) => v.guide)
+      .map((v) => ({ code: v.code, url: guides.guideUrl(v.guide) }));
+    entries.push(sitemapEntry(config.SITE_URL, list, guides.guideUrl(guide), DEFAULT_LANG, guide.updated));
   }
   files.set('/sitemap.xml', makeAsset('/sitemap.xml', Buffer.from(sitemapXml(entries)), '.xml'));
   return files;

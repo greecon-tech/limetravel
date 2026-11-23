@@ -206,3 +206,38 @@ test('blogu: indeksi, artikujt, SEO/AEO, RSS dhe sitemap', async (t) => {
   const it = await (await get(server, '/it/')).text();
   assert.ok(it.includes('href="/en/blog/"') && !it.includes('blog-latest-title'));
 });
+
+test('faqet e destinacioneve dhe aktiviteteve janë të vlefshme dhe të çiftuara', () => {
+  const { check } = require('../scripts/check-guides');
+  assert.deepStrictEqual(check(), []);
+});
+
+test('destinacione dhe aktivitete: indekse, faqe, SEO/AEO, sitemap dhe navigim', async (t) => {
+  const server = await listen({});
+  t.after(() => server.close());
+  const { loadGuides, guideUrl, sectionUrl } = require('../lib/guides');
+  const guides = loadGuides();
+  assert.ok(guides.length >= 10);
+  for (const [lang, kind] of [['sq', 'destination'], ['sq', 'activity'], ['en', 'destination'], ['en', 'activity']]) {
+    const res = await get(server, sectionUrl(lang, kind));
+    assert.strictEqual(res.status, 200, sectionUrl(lang, kind));
+    assert.ok(!/\{\{/.test(await res.text()));
+  }
+  for (const g of guides) {
+    const url = guideUrl(g);
+    const res = await get(server, url);
+    assert.strictEqual(res.status, 200, url);
+    const html = await res.text();
+    assert.ok(html.includes('"@type":"FAQPage"') && html.includes('"@type":"BreadcrumbList"'), url);
+    assert.ok(g.kind === 'destination' ? html.includes('"@type":"TouristDestination"') && html.includes('openstreetmap.org') : html.includes('"@type":"WebPage"'), url);
+    assert.ok(html.includes('class="facts"') && html.includes('class="summary"') && html.includes('class="post__sources"'), url);
+    assert.ok(html.includes('hreflang="sq"') && html.includes('hreflang="en"'), url);
+    assert.ok(!/\{\{/.test(html), url);
+  }
+  const home = await (await get(server, '/')).text();
+  assert.ok(home.includes('destinations-title') && home.includes('href="/destinacione/"') && home.includes('href="/aktivitete/"'));
+  const it = await (await get(server, '/it/')).text();
+  assert.ok(it.includes('href="/en/destinations/"') && it.includes('href="/en/activities/"'));
+  const sitemap = await (await get(server, '/sitemap.xml')).text();
+  assert.ok(sitemap.includes('/destinacione/alpet-shqiptare-theth-valbone') && sitemap.includes('/en/activities/hiking-in-albania'));
+});

@@ -225,5 +225,7 @@
  "js.opening_whatsapp": "Si sta aprendo WhatsApp con il Suo messaggio già pronto.",
  "js.opening_email": "Si sta aprendo l’email con il Suo messaggio già pronto.",
  "js.copied": "Messaggio copiato. Può incollarlo dove preferisce e inviarcelo.",
- "js.copy_failed": "Copia automatica non riuscita. Il messaggio è selezionato: lo copi e ce lo invii."
+ "js.copy_failed": "Copia automatica non riuscita. Il messaggio è selezionato: lo copi e ce lo invii.",
+ "header.destinacione": "Destinazioni",
+ "header.aktivitete": "Attività"
 }

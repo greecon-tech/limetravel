@@ -63,3 +63,11 @@ Emri i skedarit: `<id>.<sq|en>.md`; `slug` ASCII kebab-case, i ndryshëm për ç
 ## 6. Pas publikimit
 Dega e punës deploy-ohet vetë. Faqja përditëson sitemap-in, RSS-in (`/blog/feed.xml`, `/en/blog/feed.xml`),
 hreflang dhe seksionin “Të rejat nga blogu” në kryefaqe automatikisht.
+
+## 7. Faqet e destinacioneve dhe aktiviteteve (`content/guides/`)
+Të njëjtat rregulla fakti dhe SEO/AEO si për blogun, me këto shtesa (kontrollohen nga `node scripts/check-guides.js`):
+- `kind`: `destination` ose `activity`; `name` (emri i shkurtër), `region`, `order`; për destinacionet `location` {label, lat, lon} dhe `itinerary` me të paktën 2 ditë.
+- `facts`: të paktën 3 rreshta label/value (“Në një vështrim”). Vetëm fakte të konfirmuara; kur burimet ndryshojnë, jepni interval.
+- Itineraret janë IDE, jo programe të konfirmuara; nuk përmbajnë çmime. Çmimi dhe disponueshmëria jepen vetëm pas verifikimit nga ekipi.
+- Mos kopjoni tekste, itinerare, harta, foto apo çmime nga faqe të operatorëve të tjerë. Përdorni vetëm burime publike zyrtare dhe tekst origjinal.
+- Pa foto me watermark ose pa licencë të dokumentuar (shih `content/LEGAL-NOTES.md`).
