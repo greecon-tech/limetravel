@@ -1,6 +1,7 @@
 'use strict';
 
 // LimeTravel — server statik pa varësi të jashtme, gati për Railway.
+// Faqet ndërtohen një herë në nisje, për çdo gjuhë, nga pages/ + partials/ + locales/.
 const http = require('node:http');
 const fs = require('node:fs');
 const path = require('node:path');
@@ -8,7 +9,33 @@ const zlib = require('node:zlib');
 const crypto = require('node:crypto');
 
 const PUBLIC_DIR = path.join(__dirname, 'public');
+const PAGES_DIR = path.join(__dirname, 'pages');
 const PARTIALS_DIR = path.join(__dirname, 'partials');
+const LOCALES_DIR = path.join(__dirname, 'locales');
+
+const DEFAULT_LANG = 'sq';
+// Gjuhët që ndërtohen janë ato që kanë skedar locales/<kodi>.json.
+const LANGS = [
+  { code: 'sq', name: 'Shqip', og: 'sq_AL' },
+  { code: 'en', name: 'English', og: 'en_GB' },
+  { code: 'it', name: 'Italiano', og: 'it_IT' },
+  { code: 'de', name: 'Deutsch', og: 'de_DE' },
+  { code: 'el', name: 'Ελληνικά', og: 'el_GR' },
+];
+const PAGES = [
+  { id: 'home', file: 'index.html' },
+  {
+    id: 'doctrine',
+    file: 'doktrina.html',
+    slug: { sq: 'doktrina', en: 'doctrine', it: 'dottrina', de: 'grundsaetze', el: 'doctrine' },
+  },
+  {
+    id: 'privacy',
+    file: 'privatesia.html',
+    slug: { sq: 'privatesia', en: 'privacy', it: 'privacy', de: 'datenschutz', el: 'privacy' },
+  },
+  { id: 'notfound', file: '404.html' },
+];
 
 const MIME = {
   '.html': 'text/html; charset=utf-8',
@@ -67,10 +94,22 @@ function readConfig(env = process.env) {
   };
 }
 
-function render(source, config, partials) {
-  return source
-    .replace(/\{\{>\s*([\w-]+)\s*\}\}/g, (_, name) => partials[name] || '')
+function translate(dict, key) {
+  if (!(key in dict)) throw new Error(`Mungon përkthimi për çelësin "${key}"`);
+  return dict[key];
+}
+
+// {{> partial}}, {{t:çelës}} (HTML), {{a:çelës}} (atribut), {{#KEY}}…{{/KEY}}, {{&RAW}}, {{ESCAPED}}
+function render(source, config, partials, dict = {}) {
+  let out = source.replace(/\{\{>\s*([\w-]+)\s*\}\}/g, (_, name) => partials[name] || '');
+  for (let i = 0; i < 5 && /\{\{[ta]:/.test(out); i++) {
+    out = out
+      .replace(/\{\{t:([\w.-]+)\}\}/g, (_, key) => translate(dict, key))
+      .replace(/\{\{a:([\w.-]+)\}\}/g, (_, key) => escapeHtml(translate(dict, key)));
+  }
+  return out
     .replace(/\{\{#(\w+)\}\}([\s\S]*?)\{\{\/\1\}\}/g, (_, key, body) => (config[key] ? body : ''))
+    .replace(/\{\{&(\w+)\}\}/g, (match, key) => (key in config ? String(config[key]) : match))
     .replace(/\{\{(\w+)\}\}/g, (match, key) => (key in config ? escapeHtml(config[key]) : match));
 }
 
@@ -81,13 +120,91 @@ function cachePolicy(urlPath, ext) {
   return 'public, max-age=0, must-revalidate';
 }
 
+function makeAsset(urlPath, body, ext) {
+  const asset = {
+    body,
+    type: MIME[ext],
+    cache: cachePolicy(urlPath, ext),
+    etag: '"' + crypto.createHash('sha1').update(body).digest('base64url').slice(0, 20) + '"',
+  };
+  if (COMPRESSIBLE.has(ext) && body.length > 512) {
+    asset.br = zlib.brotliCompressSync(body, { params: { [zlib.constants.BROTLI_PARAM_QUALITY]: 11 } });
+    asset.gzip = zlib.gzipSync(body, { level: 9 });
+  }
+  return asset;
+}
+
+// ---------- Rrugët e faqeve sipas gjuhës ----------
+
+function pageUrl(lang, pageId) {
+  const prefix = lang.code === DEFAULT_LANG ? '' : '/' + lang.code;
+  if (pageId === 'home') return prefix + '/';
+  if (pageId === 'notfound') return prefix + '/404';
+  const page = PAGES.find((p) => p.id === pageId);
+  return `${prefix}/${page.slug[lang.code]}`;
+}
+
+const urlToFile = (url) => (url.endsWith('/') ? url + 'index.html' : url + '.html');
+
+function languageMenu(active, current, pageId, dict) {
+  if (active.length < 2) return '';
+  const target = pageId === 'notfound' ? 'home' : pageId;
+  const items = active
+    .map((lang) => {
+      const here = lang.code === current.code ? ' aria-current="true"' : '';
+      return `<li><a href="${pageUrl(lang, target)}" hreflang="${lang.code}" lang="${lang.code}"${here}>${escapeHtml(lang.name)}</a></li>`;
+    })
+    .join('');
+  return (
+    `<details class="lang" data-lang><summary aria-label="${escapeHtml(translate(dict, 'ui.language'))}">` +
+    '<svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#globe"/></svg>' +
+    `<span>${current.code.toUpperCase()}</span></summary><ul>${items}</ul></details>`
+  );
+}
+
+function hreflangLinks(active, pageId, siteUrl) {
+  if (pageId === 'notfound' || active.length < 2) return '';
+  const links = active.map(
+    (lang) => `<link rel="alternate" hreflang="${lang.code}" href="${siteUrl}${pageUrl(lang, pageId)}">`
+  );
+  const fallback = active.find((l) => l.code === DEFAULT_LANG) || active[0];
+  links.push(`<link rel="alternate" hreflang="x-default" href="${siteUrl}${pageUrl(fallback, pageId)}">`);
+  return links.join('\n  ');
+}
+
+function sitemapXml(active, siteUrl) {
+  const fallback = active.find((l) => l.code === DEFAULT_LANG) || active[0];
+  const entries = [];
+  for (const page of PAGES.filter((p) => p.id !== 'notfound')) {
+    const alternates =
+      active
+        .map((l) => `<xhtml:link rel="alternate" hreflang="${l.code}" href="${siteUrl}${pageUrl(l, page.id)}"/>`)
+        .join('') + `<xhtml:link rel="alternate" hreflang="x-default" href="${siteUrl}${pageUrl(fallback, page.id)}"/>`;
+    for (const lang of active) {
+      entries.push(`  <url><loc>${siteUrl}${pageUrl(lang, page.id)}</loc>${alternates}</url>`);
+    }
+  }
+  return (
+    '<?xml version="1.0" encoding="UTF-8"?>\n' +
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' +
+    entries.join('\n') +
+    '\n</urlset>\n'
+  );
+}
+
 // Ngarkon çdo skedar në memorie një herë: i renderuar, i kompresuar dhe me ETag.
 function buildSite(config = readConfig()) {
   const partials = {};
   for (const file of fs.readdirSync(PARTIALS_DIR)) {
     partials[path.basename(file, '.html')] = fs.readFileSync(path.join(PARTIALS_DIR, file), 'utf8');
   }
+  const readLocale = (code) => JSON.parse(fs.readFileSync(path.join(LOCALES_DIR, `${code}.json`), 'utf8'));
+  const base = readLocale(DEFAULT_LANG);
+  const active = LANGS.filter((l) => fs.existsSync(path.join(LOCALES_DIR, `${l.code}.json`)));
+
   const files = new Map();
+
+  // Skedarët statikë (fonte, imazhe, CSS, JS, robots…)
   const walk = (dir) => {
     for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
       const full = path.join(dir, entry.name);
@@ -100,28 +217,47 @@ function buildSite(config = readConfig()) {
       const urlPath = '/' + path.relative(PUBLIC_DIR, full).split(path.sep).join('/');
       let body = fs.readFileSync(full);
       if (TEMPLATED.has(ext)) body = Buffer.from(render(body.toString('utf8'), config, partials));
-      const asset = {
-        body,
-        type: MIME[ext],
-        cache: cachePolicy(urlPath, ext),
-        etag: '"' + crypto.createHash('sha1').update(body).digest('base64url').slice(0, 20) + '"',
-      };
-      if (COMPRESSIBLE.has(ext) && body.length > 512) {
-        asset.br = zlib.brotliCompressSync(body, {
-          params: { [zlib.constants.BROTLI_PARAM_QUALITY]: 11 },
-        });
-        asset.gzip = zlib.gzipSync(body, { level: 9 });
-      }
-      files.set(urlPath, asset);
+      files.set(urlPath, makeAsset(urlPath, body, ext));
     }
   };
   walk(PUBLIC_DIR);
+
+  // Faqet, për çdo gjuhë
+  for (const lang of active) {
+    const dict = { ...base, ...(lang.code === DEFAULT_LANG ? {} : readLocale(lang.code)) };
+    const js = Object.fromEntries(
+      Object.entries(dict)
+        .filter(([key]) => key.startsWith('js.'))
+        .map(([key, value]) => [key.slice(3), value])
+    );
+    for (const page of PAGES) {
+      const url = pageUrl(lang, page.id);
+      const ctx = {
+        ...config,
+        LANG: lang.code,
+        OG_LOCALE: lang.og,
+        HOME: pageUrl(lang, 'home'),
+        P_DOCTRINE: pageUrl(lang, 'doctrine'),
+        P_PRIVACY: pageUrl(lang, 'privacy'),
+        CANONICAL: config.SITE_URL + url,
+        HREFLANG: hreflangLinks(active, page.id, config.SITE_URL),
+        LANG_MENU: languageMenu(active, lang, page.id, dict),
+        WA_TEXT: encodeURIComponent(dict['js.greeting']),
+        STRINGS_JSON: JSON.stringify(js),
+      };
+      const source = fs.readFileSync(path.join(PAGES_DIR, page.file), 'utf8');
+      const file = urlToFile(url);
+      files.set(file, makeAsset(file, Buffer.from(render(source, ctx, partials, dict)), '.html'));
+    }
+  }
+
+  files.set('/sitemap.xml', makeAsset('/sitemap.xml', Buffer.from(sitemapXml(active, config.SITE_URL)), '.xml'));
   return files;
 }
 
 function resolveAsset(files, pathname) {
-  if (pathname === '/') return files.get('/index.html');
   if (pathname.endsWith('.html')) return undefined; // vetëm URL të pastra
+  if (pathname.endsWith('/')) return files.get(pathname + 'index.html');
   return files.get(pathname) || files.get(pathname + '.html');
 }
 
@@ -164,20 +300,25 @@ function createHandler(files) {
 
     if (pathname === '/healthz') return text(200, 'ok');
 
-    // /doktrina/ → /doktrina, /index.html → /, /doktrina.html → /doktrina
+    // URL kanonike: /doktrina/ → /doktrina, /doktrina.html → /doktrina, /index.html → /, /en → /en/
     let canonical = pathname.replace(/\/{2,}/g, '/');
-    if (canonical.length > 1 && canonical.endsWith('/')) canonical = canonical.slice(0, -1);
     if (canonical.endsWith('.html')) canonical = canonical.slice(0, -5);
-    if (canonical === '/index') canonical = '/';
+    if (canonical.endsWith('/index')) canonical = canonical.slice(0, -5);
+    if (!canonical.endsWith('/') && files.has(canonical + '/index.html')) {
+      canonical += '/';
+    } else if (canonical.length > 1 && canonical.endsWith('/') && !files.has(canonical + 'index.html')) {
+      canonical = canonical.slice(0, -1);
+    }
     if (canonical !== pathname && resolveAsset(files, canonical)) {
       const query = req.url.includes('?') ? req.url.slice(req.url.indexOf('?')) : '';
       res.writeHead(301, { ...SECURITY_HEADERS, Location: canonical + query, 'Content-Length': 0 });
       return res.end();
     }
 
-    const asset = pathname === '/404' ? undefined : resolveAsset(files, pathname);
+    const asset = /(^|\/)404$/.test(pathname) ? undefined : resolveAsset(files, pathname);
     if (!asset) {
-      const notFound = files.get('/404.html');
+      const lang = pathname.match(/^\/([a-z]{2})(?:\/|$)/);
+      const notFound = (lang && files.get(`/${lang[1]}/404.html`)) || files.get('/404.html');
       return send(404, { ...notFound, cache: 'no-store', etag: undefined });
     }
     if (req.headers['if-none-match'] === asset.etag) {
@@ -206,4 +347,4 @@ function start() {
 
 if (require.main === module) start();
 
-module.exports = { buildSite, createHandler, readConfig, render };
+module.exports = { buildSite, createHandler, readConfig, render, pageUrl, LANGS, PAGES };

@@ -8,6 +8,15 @@
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: "Noto Serif";
+  src: url("/assets/fonts/noto-serif-greek-wght-normal.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF;
 }
 @font-face {
   font-family: "Noto Serif";
@@ -15,6 +24,15 @@
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: "Noto Serif";
+  src: url("/assets/fonts/noto-serif-greek-wght-italic.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+  unicode-range: U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF;
 }
 @font-face {
   font-family: "Inter";
@@ -22,6 +40,15 @@
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("/assets/fonts/inter-greek-wght-normal.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF;
 }
 
 :root {
@@ -372,6 +399,67 @@ a:hover > .link .icon {
   align-items: center;
   gap: 8px;
 }
+
+/* Zgjedhësi i gjuhës */
+.lang {
+  position: relative;
+}
+.lang summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 40px;
+  padding: 0 12px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--forest);
+  cursor: pointer;
+  list-style: none;
+  transition: background-color 0.2s var(--ease);
+}
+.lang summary::-webkit-details-marker {
+  display: none;
+}
+.lang summary:hover,
+.lang[open] summary {
+  background: rgba(18, 61, 43, 0.08);
+}
+.lang summary .icon {
+  width: 18px;
+  height: 18px;
+}
+.lang ul {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 14px);
+  min-width: 176px;
+  padding: 8px;
+  border: 1px solid rgba(18, 61, 43, 0.12);
+  border-radius: 20px;
+  background: rgba(246, 244, 236, 0.97);
+  -webkit-backdrop-filter: saturate(180%) blur(22px);
+  backdrop-filter: saturate(180%) blur(22px);
+  box-shadow: 0 18px 40px -16px rgba(9, 41, 29, 0.35);
+}
+.lang li a {
+  display: block;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: none;
+}
+.lang li a:hover {
+  background: rgba(18, 61, 43, 0.07);
+  color: var(--forest);
+}
+.lang li a[aria-current="true"] {
+  background: rgba(166, 206, 57, 0.28);
+  color: var(--forest);
+}
 .nav__toggle {
   display: none;
   width: 44px;
@@ -402,8 +490,13 @@ a:hover > .link .icon {
   display: block;
 }
 .has-hero .nav:not(.is-scrolled):not(.is-open) .nav__links a,
-.has-hero .nav:not(.is-scrolled):not(.is-open) .nav__toggle {
+.has-hero .nav:not(.is-scrolled):not(.is-open) .nav__toggle,
+.has-hero .nav:not(.is-scrolled):not(.is-open) .lang summary {
   color: #fff;
+}
+.has-hero .nav:not(.is-scrolled):not(.is-open) .lang summary:hover,
+.has-hero .nav:not(.is-scrolled):not(.is-open) .lang[open] summary {
+  background: rgba(255, 255, 255, 0.16);
 }
 .has-hero .nav:not(.is-scrolled):not(.is-open) .nav__links a:hover {
   background: rgba(255, 255, 255, 0.16);
@@ -551,6 +644,9 @@ a:hover > .link .icon {
   font-size: clamp(35px, 8.6vw, 92px);
   line-height: 1.02;
   text-shadow: 0 2px 36px rgba(9, 41, 29, 0.35);
+}
+:lang(de) .hero .display {
+  font-size: clamp(32px, 7vw, 74px);
 }
 .hero .display em,
 .closing .display em {
@@ -1381,6 +1477,32 @@ a:hover > .link .icon {
   }
   .footer__brand {
     grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 420px) {
+  .nav__inner {
+    gap: 4px;
+    padding-left: 16px;
+  }
+  .nav__logo img {
+    width: 116px;
+  }
+  .nav__actions {
+    gap: 2px;
+  }
+  .lang summary {
+    padding: 0 8px;
+  }
+}
+
+@media (max-width: 520px) {
+  .nav__wa-label {
+    display: none;
+  }
+  .nav__actions .btn[aria-label] {
+    width: 40px;
+    padding: 0;
   }
 }
 

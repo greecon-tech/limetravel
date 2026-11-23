@@ -2,28 +2,28 @@
   <div class="container footer__grid">
     <div class="footer__brand">
       <img src="/assets/img/wordmark-reverse-600.webp" srcset="/assets/img/wordmark-reverse-600.webp 600w, /assets/img/wordmark-reverse-1200.webp 1200w" sizes="180px" width="600" height="120" alt="LimeTravel">
-      <p>Udhëtime të menduara me kujdes, nga ideja te kthimi.</p>
-      <p class="footer__motto" lang="en">Let’s live a little bit.</p>
+      <p>{{t:doktrina.udhetime-te-menduara-me}}</p>
+      <p class="footer__motto" lang="en">{{t:doktrina.lets-live-a-little}}</p>
     </div>
-    <nav class="footer__col" aria-label="Faqet">
-      <h2>Faqja</h2>
-      <a href="/#udhetime">Udhëtime</a>
-      <a href="/#si-punojme">Si punojmë</a>
-      <a href="/doktrina">Doktrina</a>
-      <a href="/#pyetje">Pyetje të shpeshta</a>
-      <a href="/privatesia">Privatësia</a>
+    <nav class="footer__col" aria-label="{{a:attr.faqet}}">
+      <h2>{{t:footer.faqja}}</h2>
+      <a href="{{HOME}}#udhetime">{{t:index.udhetime}}</a>
+      <a href="{{HOME}}#si-punojme">{{t:index.si-punojme}}</a>
+      <a href="{{P_DOCTRINE}}">{{t:header.doktrina}}</a>
+      <a href="{{HOME}}#pyetje">{{t:index.pyetje-te-shpeshta}}</a>
+      <a href="{{P_PRIVACY}}">{{t:privatesia.privatesia}}</a>
     </nav>
     <div class="footer__col">
-      <h2>Kontakt</h2>
+      <h2>{{t:privatesia.kontakt}}</h2>
       {{#WHATSAPP}}<a href="https://wa.me/{{WHATSAPP}}" rel="noopener" target="_blank"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#whatsapp"/></svg>WhatsApp · {{PHONE_DISPLAY}}</a>
-      <a href="tel:{{PHONE_TEL}}"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#phone"/></svg>Telefon · {{PHONE_DISPLAY}}</a>{{/WHATSAPP}}
+      <a href="tel:{{PHONE_TEL}}"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#phone"/></svg>{{t:footer.telefon}}</a>{{/WHATSAPP}}
       {{#EMAIL}}<a href="mailto:{{EMAIL}}"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#mail"/></svg>{{EMAIL}}</a>{{/EMAIL}}
       <a href="https://www.instagram.com/{{INSTAGRAM}}/" rel="noopener" target="_blank"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#instagram"/></svg>Instagram · @{{INSTAGRAM}}</a>
       <a href="{{LINKEDIN}}" rel="noopener" target="_blank"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#linkedin"/></svg>LinkedIn · LimeTravel</a>
-      <a href="/#kerkese"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#arrow"/></svg>Kërko ofertë</a>
+      <a href="{{HOME}}#kerkese"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#arrow"/></svg>{{t:index.kerko-oferte}}</a>
     </div>
   </div>
   <div class="container"><div class="footer__legal">
-    <p>© {{YEAR}} LimeTravel. Çmimi dhe disponueshmëria konfirmohen në momentin e rezervimit.</p>
+    <p>{{t:footer.limetravel-cmimi-dhe-disponueshmeria}}</p>
   </div></div>
 </footer>

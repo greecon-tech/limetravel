@@ -9,14 +9,24 @@ Brand Book 1.0 dhe Doktrinës së LimeTravel. Pa varësi të jashtme, pa hap nd�
 server.js            Server Node pa varësi: kompresim, cache, header sigurie, /healthz
 partials/            head, header, footer (përfshihen me {{> emri}})
 public/              Faqet dhe asetet
-  index.html         Kreu: premtimi, udhëtimet, si punojmë, doktrina, kërkesa, pyetjet
-  doktrina.html      Doktrina publike
-  privatesia.html    Privatësia
-  404.html
-  assets/css|js|img|fonts
+  assets/css|js|img|fonts, robots.txt, favicon, manifest
+pages/               Shabllonet e faqeve: kreu, doktrina, privatësia, 404
+locales/             Tekstet për secilën gjuhë (JSON)
+scripts/             Kontrolli i përkthimeve
 test/                Teste të serverit (node --test)
 railway.json         Konfigurimi i Railway
 ```
+
+## Gjuhët
+
+Shqip (kryesore, në `/`), anglisht (`/en/`), italisht (`/it/`), gjermanisht (`/de/`) dhe greqisht (`/el/`).
+Çdo faqe ka URL të veten për gjuhë, `hreflang`, sitemap shumëgjuhësh dhe 404 për secilën gjuhë.
+
+- `pages/` dhe `partials/` janë shabllonet; tekstet janë çelësa `{{t:çelësi}}` (HTML) dhe `{{a:çelësi}}` (atribute).
+- `locales/sq.json` është burimi; `locales/en.json`, `it.json`, `de.json`, `el.json` janë përkthimet.
+- Për të ndryshuar një tekst, ndryshoni vlerën te skedari i gjuhës. Për një gjuhë të re: shtojeni te `LANGS` dhe `PAGES` te `server.js` dhe krijoni `locales/<kodi>.json`.
+- Kontrolli: `node scripts/check-locales.js en it de el` siguron që çdo përkthim ka të njëjtët çelësa, shenja `{{…}}` dhe etiketa HTML si shqipja (e ekzekutojnë edhe testet).
+- Përkthimet janë bërë me ndihmën e AI-së dhe duhen rishikuar nga folës amtare para publikimit, sidomos faqet e Doktrinës dhe Privatësisë.
 
 ## Lokalisht
 

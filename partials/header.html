@@ -1,21 +1,22 @@
-<a class="skip-link" href="#permbajtja">Kalo te përmbajtja</a>
+<a class="skip-link" href="#permbajtja">{{t:header.kalo-te-permbajtja}}</a>
 <header class="nav" data-nav>
   <div class="nav__inner">
-    <a class="nav__logo" href="/" aria-label="LimeTravel — kreu">
+    <a class="nav__logo" href="{{HOME}}" aria-label="{{a:attr.limetravel-kreu}}">
       <img class="nav__logo-dark" src="/assets/img/wordmark-600.webp" srcset="/assets/img/wordmark-600.webp 600w, /assets/img/wordmark-1200.webp 1200w" sizes="150px" width="600" height="120" alt="LimeTravel">
       <img class="nav__logo-light" src="/assets/img/wordmark-reverse-600.webp" srcset="/assets/img/wordmark-reverse-600.webp 600w, /assets/img/wordmark-reverse-1200.webp 1200w" sizes="150px" width="600" height="120" alt="" aria-hidden="true">
     </a>
-    <nav class="nav__links" id="menu" aria-label="Navigimi kryesor">
-      <a href="/#udhetime">Udhëtime</a>
-      <a href="/#si-punojme">Si punojmë</a>
-      <a href="/doktrina">Doktrina</a>
-      <a href="/#pyetje">Pyetje</a>
+    <nav class="nav__links" id="menu" aria-label="{{a:attr.navigimi-kryesor}}">
+      <a href="{{HOME}}#udhetime">{{t:index.udhetime}}</a>
+      <a href="{{HOME}}#si-punojme">{{t:index.si-punojme}}</a>
+      <a href="{{P_DOCTRINE}}">{{t:header.doktrina}}</a>
+      <a href="{{HOME}}#pyetje">{{t:header.pyetje}}</a>
     </nav>
     <div class="nav__actions">
-      {{#WHATSAPP}}<a class="btn btn--primary btn--sm" href="https://wa.me/{{WHATSAPP}}?text=P%C3%ABrsh%C3%ABndetje%20LimeTravel%21%20Do%20t%C3%AB%20doja%20nj%C3%AB%20ofert%C3%AB%20udh%C3%ABtimi." rel="noopener" target="_blank"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#whatsapp"/></svg>WhatsApp</a>{{/WHATSAPP}}
-      {{#NO_WHATSAPP}}<a class="btn btn--primary btn--sm" href="/#kerkese">Kërko ofertë</a>{{/NO_WHATSAPP}}
+      {{&LANG_MENU}}
+      {{#WHATSAPP}}<a class="btn btn--primary btn--sm" href="https://wa.me/{{WHATSAPP}}?text={{&WA_TEXT}}" rel="noopener" target="_blank" aria-label="WhatsApp"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#whatsapp"/></svg><span class="nav__wa-label">WhatsApp</span></a>{{/WHATSAPP}}
+      {{#NO_WHATSAPP}}<a class="btn btn--primary btn--sm" href="{{HOME}}#kerkese">{{t:index.kerko-oferte}}</a>{{/NO_WHATSAPP}}
       <button class="nav__toggle" type="button" aria-controls="menu" aria-expanded="false" data-nav-toggle>
-        <span class="visually-hidden">Menyja</span>
+        <span class="visually-hidden">{{t:header.menyja}}</span>
         <svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#menu"/></svg>
       </button>
     </div>

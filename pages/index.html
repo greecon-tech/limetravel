@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="{{LANG}}">
+<head>
+  <meta charset="utf-8">
+  <title>{{t:attr.limetravel-udheto-me-shije}}</title>
+  <meta name="description" content="{{a:attr.limetravel-udhetime-te-menduara}}">
+  <link rel="canonical" href="{{CANONICAL}}">
+  {{&HREFLANG}}
+  <meta property="og:title" content="{{a:attr.limetravel-udheto-me-shije}}">
+  <meta property="og:description" content="{{a:attr.udhetime-te-menduara-me}}">
+  <meta property="og:url" content="{{CANONICAL}}">
+  {{> head}}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TravelAgency",
+    "name": "LimeTravel",
+    "url": "{{SITE_URL}}/",
+    "logo": "{{SITE_URL}}/assets/img/icon-512.png",
+    "image": "{{SITE_URL}}/assets/img/og.jpg",
+    "slogan": "{{t:site.slogan}}",
+    "description": "{{t:site.description}}",
+    {{#WHATSAPP}}"telephone": "{{PHONE_TEL}}",{{/WHATSAPP}}
+    {{#EMAIL}}"email": "{{EMAIL}}",{{/EMAIL}}
+    "sameAs": ["https://www.instagram.com/{{INSTAGRAM}}/", "{{LINKEDIN}}"]
+  }
+  </script>
+</head>
+<body class="has-hero" data-instagram="{{INSTAGRAM}}" data-whatsapp="{{WHATSAPP}}" data-email="{{EMAIL}}">
+{{> header}}
+
+<main id="permbajtja">
+
+  <!-- Hero -->
+  <section class="hero">
+    <img class="bg-img" src="/assets/img/hero-1000.webp" width="1000" height="667" alt="" fetchpriority="high" decoding="async">
+    <div class="bg-shade" aria-hidden="true"></div>
+    <p class="hero__credit">{{t:index.imazh-ilustrues}}</p>
+
+    <div class="container hero__content">
+      <p class="badge" lang="en">{{t:index.lets-live-a-little}}</p>
+      <h1 class="display">{{t:index.udheto-me-shije-kthehu}}</h1>
+      <p class="lead">{{t:index.udhetime-te-menduara-me}}</p>
+      <div class="hero__cta hero__cta--center">
+        {{#WHATSAPP}}<a class="btn btn--primary" href="https://wa.me/{{WHATSAPP}}?text={{&WA_TEXT}}" rel="noopener" target="_blank"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#whatsapp"/></svg>{{t:index.shkruaj-ne-whatsapp}}</a>
+        <a class="btn btn--glass" href="#kerkese">{{t:index.kerko-oferte}}</a>{{/WHATSAPP}}
+        {{#NO_WHATSAPP}}<a class="btn btn--primary" href="#kerkese">{{t:index.kerko-oferte}}</a>
+        <a class="btn btn--glass" href="#si-punojme">{{t:index.si-punojme}}</a>{{/NO_WHATSAPP}}
+      </div>
+      <p class="hero__note">{{t:index.pa-detyrim-cmimi-final}}</p>
+    </div>
+
+    <div class="container hero__strip">
+      <ul class="glass-strip" aria-label="{{a:attr.cfare-gjeni-ne-cdo}}">
+        <li>
+          <svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#price"/></svg>
+          <div><strong>{{t:index.cmimi-total}}</strong><span>{{t:index.per-ke-eshte-dhe}}</span></div>
+        </li>
+        <li>
+          <svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#plus"/></svg>
+          <div><strong>{{t:index.cfare-perfshihet}}</strong><span>{{t:index.netet-hoteli-transporti-bagazhi}}</span></div>
+        </li>
+        <li>
+          <svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#minus"/></svg>
+          <div><strong>{{t:index.cfare-nuk-perfshihet}}</strong><span>{{t:index.e-shkruar-qarte-jo}}</span></div>
+        </li>
+        <li>
+          <svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#shield"/></svg>
+          <div><strong>{{t:index.kushtet-dhe-afati}}</strong><span>{{t:index.pagesa-anulimi-dhe-vlefshmeria}}</span></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Tre shtyllat -->
+  <section class="section" aria-labelledby="shtyllat-title">
+    <div class="container">
+      <div class="section__head reveal">
+        <p class="eyebrow">{{t:index.premtimi-yne}}</p>
+        <h2 id="shtyllat-title">{{t:index.ti-bejme-udhetimet-me}}</h2>
+      </div>
+      <div class="pillars">
+        <article class="pillar reveal">
+          <svg class="icon icon--lg" aria-hidden="true"><use href="/assets/img/icons.svg#compass"/></svg>
+          <h3>{{t:index.frymezim}}</h3>
+          <p>{{t:index.ide-destinacionesh-city-break}}</p>
+        </article>
+        <article class="pillar reveal">
+          <svg class="icon icon--lg" aria-hidden="true"><use href="/assets/img/icons.svg#document"/></svg>
+          <h3>{{t:index.qartesi}}</h3>
+          <p>{{t:index.cmimi-perfshirjet-perjashtimet-dhe}}</p>
+        </article>
+        <article class="pillar reveal">
+          <svg class="icon icon--lg" aria-hidden="true"><use href="/assets/img/icons.svg#chat"/></svg>
+          <h3>{{t:index.kujdes}}</h3>
+          <p>{{t:index.nje-person-real-ne}}</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Udhëtime -->
+  <section class="section section--tint" id="udhetime" aria-labelledby="udhetime-title">
+    <div class="container">
+      <div class="section__head reveal">
+        <p class="eyebrow">{{t:index.udhetime}}</p>
+        <h2 id="udhetime-title">{{t:index.cdo-udhetim-nis-nga}}</h2>
+        <p class="section__lead">{{t:index.na-tregoni-datat-dhe}}</p>
+      </div>
+      <div class="trips">
+        <article class="trip reveal">
+          <svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#pair"/></svg>
+          <h3>{{t:index.udhetime-per-dy}}</h3>
+          <p class="trip__line">{{t:index.nje-udhetim-i-menduar}}</p>
+          <p>{{t:index.ide-te-bukura-pa}}</p>
+        </article>
+        <article class="trip reveal">
+          <svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#family"/></svg>
+          <h3>{{t:index.familje}}</h3>
+          <p class="trip__line">{{t:index.me-pak-pasiguri-para}}</p>
+          <p>{{t:index.oraret-bagazhet-transfertat-dhe}}</p>
+        </article>
+        <article class="trip reveal">
+          <svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#briefcase"/></svg>
+          <h3>{{t:index.udhetare-te-zene}}</h3>
+          <p class="trip__line">{{t:index.ne-merremi-me-detajet}}</p>
+          <p>{{t:index.proces-i-qarte-afate}}</p>
+        </article>
+        <article class="trip reveal">
+          <svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#city"/></svg>
+          <h3>{{t:index.city-break}}</h3>
+          <p class="trip__line">{{t:index.zbuloni-me-shume-me}}</p>
+          <p>{{t:index.sugjerime-lokale-kohe-e}}</p>
+        </article>
+        <article class="trip reveal">
+          <svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#group"/></svg>
+          <h3>{{t:index.grupe-dhe-shoqeri}}</h3>
+          <p class="trip__line">{{t:index.nje-plan-i-qarte}}</p>
+          <p>{{t:index.koordinim-dhe-buxhet-i}}</p>
+        </article>
+        <a class="trip trip--cta reveal" href="#kerkese">
+          <h3>{{t:index.keni-nje-ide-tjeter}}</h3>
+          <p>{{t:index.na-e-tregoni-me}}</p>
+          <span class="link">{{t:index.kerko-oferte}}
+            <svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#arrow"/></svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Si punojmë -->
+  <section class="section" id="si-punojme" aria-labelledby="si-title">
+    <div class="container">
+      <div class="section__head reveal">
+        <p class="eyebrow">{{t:index.si-punojme}}</p>
+        <h2 id="si-title">{{t:index.nga-ideja-te-kthimi}}</h2>
+        <p class="section__lead">{{t:index.cfare-mund-te-prisni}}</p>
+      </div>
+      <ol class="steps">
+        <li class="step reveal">
+          <h3>{{t:index.zbulimi}}</h3>
+          <p>{{t:index.pergjigje-te-shpejta-dhe}}</p>
+        </li>
+        <li class="step reveal">
+          <h3>{{t:index.propozimi}}</h3>
+          <p>{{t:index.opsione-te-krahasueshme-me}}</p>
+        </li>
+        <li class="step reveal">
+          <h3>{{t:index.rezervimi}}</h3>
+          <p>{{t:index.konfirmim-i-shkruar-pa}}</p>
+        </li>
+        <li class="step reveal">
+          <h3>{{t:index.para-nisjes}}</h3>
+          <p>{{t:index.kujtese-e-dobishme-dhe}}</p>
+        </li>
+        <li class="step reveal">
+          <h3>{{t:index.gjate-udhetimit}}</h3>
+          <p>{{t:index.nje-kanal-i-qarte}}</p>
+        </li>
+        <li class="step reveal">
+          <h3>{{t:index.pas-udhetimit}}</h3>
+          <p>{{t:index.falenderim-feedback-me-leje}}</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Doktrina -->
+  <section class="section section--dark" aria-labelledby="doktrina-title">
+    <div class="container doctrine">
+      <div class="doctrine__intro reveal">
+        <p class="eyebrow">{{t:index.doktrina-jone}}</p>
+        <h2 id="doktrina-title">{{t:index.i-kuruar-eshte-pune}}</h2>
+        <p>{{t:index.e-perdorim-kete-fjale}}</p>
+        <a class="link link--light" href="{{P_DOCTRINE}}">{{t:index.lexoni-doktrinen-e-plote}}
+          <svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#arrow"/></svg>
+        </a>
+      </div>
+      <ul class="never reveal">
+        <li>{{t:index.nuk-japim-cmim-final}}</li>
+        <li>{{t:index.nuk-komunikojme-perfshirje-qe}}</li>
+        <li>{{t:index.nuk-fshehim-kushte-tarifa}}</li>
+        <li>{{t:index.nuk-perdorim-superlativa-dhe}}</li>
+        <li>{{t:index.nuk-ushtrojme-presion-me}}</li>
+        <li>{{t:index.nuk-e-leme-nje}}</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Kërkesa -->
+  <section class="section section--tint" id="kerkese" aria-labelledby="kerkese-title">
+    <div class="container request">
+      <div class="request__intro reveal">
+        <p class="eyebrow">{{t:index.kerko-oferte}}</p>
+        <h2 id="kerkese-title">{{t:index.na-tregoni-pak-per}}</h2>
+        <p>{{t:index.plotesoni-cfare-dini-pjesen}}</p>
+        <ul class="ticks">
+          <li><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#check"/></svg>{{t:index.pa-detyrim-rezervimi}}</li>
+          <li><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#check"/></svg>{{t:index.te-dhenat-nuk-ruhen}}</li>
+          <li><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#check"/></svg>{{t:index.nese-na-duhet-me}}</li>
+        </ul>
+        <noscript>
+          <p class="notice">{{t:index.formulari-kerkon-javascript-mund}}</p>
+        </noscript>
+      </div>
+
+      <form class="form reveal" data-request-form data-strings="{{STRINGS_JSON}}" novalidate>
+        <div class="field field--full">
+          <label for="f-dest">{{t:index.destinacioni-ose-ideja}}</label>
+          <input id="f-dest" name="destination" type="text" autocomplete="off" placeholder="{{a:attr.p-sh-city-break}}">
+        </div>
+        <div class="field">
+          <label for="f-from">{{t:index.data-e-nisjes}}</label>
+          <input id="f-from" name="dateFrom" type="date">
+        </div>
+        <div class="field">
+          <label for="f-to">{{t:index.data-e-kthimit}}</label>
+          <input id="f-to" name="dateTo" type="date" aria-describedby="f-date-error">
+          <p class="field__error" id="f-date-error" hidden>{{t:index.data-e-kthimit-duhet}}</p>
+        </div>
+        <div class="field field--full">
+          <label class="check">
+            <input name="flexible" type="checkbox">
+            <span>{{t:index.datat-jane-fleksibel}}</span>
+          </label>
+        </div>
+        <div class="field field--full">
+          <label for="f-origin">{{t:index.nisja-nga}}</label>
+          <input id="f-origin" name="origin" type="text" autocomplete="address-level2" placeholder="{{a:attr.p-sh-tirane}}">
+        </div>
+        <div class="field">
+          <label for="f-adults">{{t:index.te-rritur}}</label>
+          <input id="f-adults" name="adults" type="number" inputmode="numeric" min="1" max="60" value="2">
+        </div>
+        <div class="field">
+          <label for="f-children">{{t:index.femije}}</label>
+          <input id="f-children" name="children" type="number" inputmode="numeric" min="0" max="30" value="0">
+        </div>
+        <div class="field field--full">
+          <label for="f-budget">{{t:index.buxheti-orientues-opsional}}</label>
+          <input id="f-budget" name="budget" type="text" autocomplete="off" placeholder="{{a:attr.p-sh-rreth-500}}">
+        </div>
+        <fieldset class="field field--full chips">
+          <legend>{{t:index.cfare-eshte-me-e}}</legend>
+          <label class="chip"><input type="checkbox" name="priority" value="{{a:attr.cmimi}}"><span>{{t:attr.cmimi}}</span></label>
+          <label class="chip"><input type="checkbox" name="priority" value="{{a:attr.fleksibiliteti}}"><span>{{t:attr.fleksibiliteti}}</span></label>
+          <label class="chip"><input type="checkbox" name="priority" value="{{a:attr.komoditeti}}"><span>{{t:attr.komoditeti}}</span></label>
+          <label class="chip"><input type="checkbox" name="priority" value="{{a:attr.pervoja}}"><span>{{t:attr.pervoja}}</span></label>
+        </fieldset>
+        <div class="field field--full">
+          <label for="f-notes">{{t:index.preferenca-ose-shqetesime-opsional}}</label>
+          <textarea id="f-notes" name="notes" rows="3" placeholder="{{a:attr.hoteli-bagazhet-lidhjet-dokumentet}}"></textarea>
+        </div>
+        <div class="field field--full">
+          <label for="f-name">{{t:index.emri-juaj}}</label>
+          <input id="f-name" name="name" type="text" autocomplete="name">
+        </div>
+
+        <div class="field field--full preview">
+          <label for="f-preview">{{t:index.mesazhi-juaj}}</label>
+          <textarea id="f-preview" rows="9" readonly data-preview></textarea>
+        </div>
+
+        <div class="field field--full form__actions">
+          <button class="btn btn--primary" type="submit" data-send="whatsapp" hidden>
+            <svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#whatsapp"/></svg>
+            {{t:index.dergo-ne-whatsapp}}
+          </button>
+          <button class="btn btn--ghost" type="button" data-send="email" hidden>
+            <svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#mail"/></svg>
+            {{t:index.dergo-me-email}}
+          </button>
+          <button class="btn btn--ghost" type="button" data-send="copy">
+            <svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#copy"/></svg>
+            {{t:index.vetem-kopjo}}
+          </button>
+        </div>
+        <p class="form__status field--full" role="status" aria-live="polite" data-status></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Pyetje -->
+  <section class="section" id="pyetje" aria-labelledby="pyetje-title">
+    <div class="container container--narrow">
+      <div class="section__head reveal">
+        <p class="eyebrow">{{t:index.pyetje-te-shpeshta}}</p>
+        <h2 id="pyetje-title">{{t:index.pergjigje-te-qarta-para}}</h2>
+      </div>
+      <div class="faq reveal">
+        <details>
+          <summary>{{t:index.si-e-kerkoj-nje}}</summary>
+          <p>{{t:index.na-shkruani-ne-whatsapp}}</p>
+        </details>
+        <details>
+          <summary>{{t:index.kur-eshte-cmimi-final}}</summary>
+          <p>{{t:index.cmimi-final-konfirmohet-pas}}</p>
+        </details>
+        <details>
+          <summary>{{t:index.cfare-permban-nje-propozim}}</summary>
+          <p>{{t:index.cmimin-total-cfare-perfshihet}}</p>
+        </details>
+        <details>
+          <summary>{{t:index.nuk-e-kam-vendosur}}</summary>
+          <p>{{t:index.po-na-tregoni-datat}}</p>
+        </details>
+        <details>
+          <summary>{{t:index.po-nese-me-duhet}}</summary>
+          <p>{{t:index.kushtet-e-ndryshimit-dhe}}</p>
+        </details>
+        <details>
+          <summary>{{t:index.sa-shpejt-merr-pergjigje}}</summary>
+          <p>{{t:index.konfirmojme-marrjen-e-kerkeses}}</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mbyllja -->
+  <section class="closing" aria-labelledby="closing-title">
+    <img class="bg-img" src="/assets/img/hero-1000.webp" width="1000" height="667" alt="" loading="lazy" decoding="async">
+    <div class="bg-shade" aria-hidden="true"></div>
+    <div class="container reveal">
+      <h2 id="closing-title" class="display display--sm">{{t:index.ku-do-tju-conte}}</h2>
+      <p class="lead">{{t:index.zgjidhni-datat-ne-ju}}</p>
+      <div class="hero__cta hero__cta--center">
+        {{#WHATSAPP}}<a class="btn btn--primary" href="https://wa.me/{{WHATSAPP}}?text={{&WA_TEXT}}" rel="noopener" target="_blank"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#whatsapp"/></svg>{{t:index.shkruaj-ne-whatsapp}}</a>{{/WHATSAPP}}
+        {{#NO_WHATSAPP}}<a class="btn btn--primary" href="#kerkese">{{t:index.kerko-oferte}}</a>{{/NO_WHATSAPP}}
+        <a class="btn btn--glass" href="https://www.instagram.com/{{INSTAGRAM}}/" rel="noopener" target="_blank">
+          <svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#instagram"/></svg>
+          @{{INSTAGRAM}}
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+{{> footer}}
+</body>
+</html>

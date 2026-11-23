@@ -38,6 +38,20 @@
     onScroll();
   }
 
+  /* ---------- Zgjedhësi i gjuhës ---------- */
+  var langMenu = doc.querySelector('[data-lang]');
+  if (langMenu) {
+    doc.addEventListener('click', function (event) {
+      if (!langMenu.contains(event.target)) langMenu.open = false;
+    });
+    doc.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && langMenu.open) {
+        langMenu.open = false;
+        langMenu.querySelector('summary').focus();
+      }
+    });
+  }
+
   /* ---------- Shfaqja gjatë lëvizjes ---------- */
   var reveals = doc.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window) {
@@ -66,6 +80,17 @@
   if (!form) return;
 
   var config = doc.body.dataset;
+  var T = {};
+  try {
+    T = JSON.parse(form.dataset.strings || '{}');
+  } catch (error) {
+    T = {};
+  }
+  function t(key, vars) {
+    var text = T[key] || '';
+    for (var name in vars) text = text.replace('{' + name + '}', vars[name]);
+    return text;
+  }
   var preview = form.querySelector('[data-preview]');
   var status = form.querySelector('[data-status]');
   var dateFrom = form.elements.dateFrom;
@@ -88,29 +113,29 @@
   }
 
   function buildMessage() {
-    var lines = ['Përshëndetje LimeTravel! Do të doja një ofertë udhëtimi.', ''];
+    var lines = [t('greeting'), ''];
     var add = function (label, text) {
       if (text) lines.push('• ' + label + ': ' + text);
     };
 
-    add('Destinacioni / ideja', value('destination'));
+    add(t('destination'), value('destination'));
 
     var from = formatDate(dateFrom.value);
     var to = formatDate(dateTo.value);
-    var dates = from && to ? from + ' – ' + to : from ? 'nga ' + from : to ? 'deri më ' + to : '';
-    if (form.elements.flexible.checked) dates = dates ? dates + ' (fleksibël)' : 'fleksibël';
-    add('Datat', dates);
+    var dates = from && to ? from + ' – ' + to : from ? t('dates_from', { date: from }) : to ? t('dates_to', { date: to }) : '';
+    if (form.elements.flexible.checked) dates = dates ? dates + ' (' + t('flexible') + ')' : t('flexible');
+    add(t('dates'), dates);
 
-    add('Nisja nga', value('origin'));
+    add(t('origin'), value('origin'));
 
     var adults = parseInt(form.elements.adults.value, 10) || 0;
     var children = parseInt(form.elements.children.value, 10) || 0;
     var travellers = [];
-    if (adults > 0) travellers.push(adults + (adults === 1 ? ' i rritur' : ' të rritur'));
-    if (children > 0) travellers.push(children + ' fëmijë');
-    add('Udhëtarët', travellers.join(', '));
+    if (adults > 0) travellers.push(t(adults === 1 ? 'adults_one' : 'adults_other', { n: adults }));
+    if (children > 0) travellers.push(t(children === 1 ? 'children_one' : 'children_other', { n: children }));
+    add(t('travellers'), travellers.join(', '));
 
-    add('Buxheti orientues', value('budget'));
+    add(t('budget'), value('budget'));
 
     var priorities = Array.prototype.filter
       .call(form.querySelectorAll('input[name="priority"]'), function (input) {
@@ -119,12 +144,12 @@
       .map(function (input) {
         return input.value;
       });
-    add('Më e rëndësishmja', priorities.join(', '));
+    add(t('priority'), priorities.join(', '));
 
-    add('Shënime', value('notes'));
+    add(t('notes'), value('notes'));
 
     var name = value('name');
-    if (name) lines.push('', 'Faleminderit,', name);
+    if (name) lines.push('', t('thanks'), name);
     return lines.join('\n');
   }
 
@@ -171,24 +196,24 @@
 
     if (channel === 'whatsapp') {
       window.open('https://wa.me/' + config.whatsapp + '?text=' + encoded, '_blank', 'noopener');
-      say('Po hapet WhatsApp me mesazhin tuaj gati.');
+      say(t('opening_whatsapp'));
       return;
     }
     if (channel === 'email') {
       window.location.href =
-        'mailto:' + config.email + '?subject=' + encodeURIComponent('Kërkesë për ofertë udhëtimi') + '&body=' + encoded;
-      say('Po hapet email-i me mesazhin tuaj gati.');
+        'mailto:' + config.email + '?subject=' + encodeURIComponent(t('subject')) + '&body=' + encoded;
+      say(t('opening_email'));
       return;
     }
 
     copy(message).then(
       function () {
-        say('Mesazhi u kopjua. Mund ta ngjisni ku të dëshironi dhe na e dërgoni.');
+        say(t('copied'));
       },
       function () {
         preview.focus();
         preview.select();
-        say('Nuk u kopjua automatikisht. Mesazhi është i përzgjedhur — kopjojeni dhe na e dërgoni.');
+        say(t('copy_failed'));
       }
     );
   }

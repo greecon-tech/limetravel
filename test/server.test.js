@@ -96,3 +96,58 @@ test('WhatsApp-i zyrtar është kanali kryesor si parazgjedhje', async (t) => {
   assert.ok(privacy.includes('https://www.linkedin.com/company/limetravel-al'));
   assert.ok(privacy.includes('tel:+355695397514') && privacy.includes('+355 69 539 7514'));
 });
+
+test('çdo përkthim përputhet me shqipen (çelësa, shenja, etiketa)', () => {
+  const fs = require('node:fs');
+  const path = require('node:path');
+  const { check } = require('../scripts/check-locales');
+  const langs = fs
+    .readdirSync(path.join(__dirname, '..', 'locales'))
+    .map((f) => path.basename(f, '.json'))
+    .filter((c) => c !== 'sq');
+  assert.ok(langs.length >= 1);
+  for (const lang of langs) assert.deepStrictEqual(check(lang), [], lang);
+});
+
+test('çdo gjuhë ka faqet e veta, hreflang dhe zgjedhës gjuhe', async (t) => {
+  const { LANGS, pageUrl } = require('../server');
+  const fs = require('node:fs');
+  const path = require('node:path');
+  const server = await listen({});
+  t.after(() => server.close());
+  const active = LANGS.filter((l) => fs.existsSync(path.join(__dirname, '..', 'locales', `${l.code}.json`)));
+  assert.ok(active.length >= 2);
+  for (const lang of active) {
+    for (const id of ['home', 'doctrine', 'privacy']) {
+      const url = pageUrl(lang, id);
+      const res = await get(server, url);
+      assert.strictEqual(res.status, 200, url);
+      const html = await res.text();
+      assert.match(html, new RegExp(`<html lang="${lang.code}">`), url);
+      assert.ok(!/\{\{/.test(html), `placeholder te ${url}`);
+      for (const other of active) assert.ok(html.includes(`hreflang="${other.code}"`), `${url} → ${other.code}`);
+      assert.ok(html.includes(`<link rel="canonical" href="https://www.limetravel.al${url}">`), url);
+    }
+    const missing = await get(server, pageUrl(lang, 'home') + 'nuk-ekziston');
+    assert.strictEqual(missing.status, 404);
+  }
+  const en = await (await get(server, '/en/')).text();
+  assert.ok(en.includes('data-strings="{&quot;greeting&quot;'));
+  assert.ok(en.includes('href="/en/#kerkese"') && en.includes('href="/en/doctrine"'));
+  assert.strictEqual((await get(server, '/en')).status, 301);
+  const sitemap = await (await get(server, '/sitemap.xml')).text();
+  assert.ok(sitemap.includes('hreflang="en"') && sitemap.includes('/en/doctrine'));
+});
+
+test('ndërtimi statik shkruan faqet e çdo gjuhe', () => {
+  const fs = require('node:fs');
+  const os = require('node:os');
+  const path = require('node:path');
+  const { build } = require('../build');
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'lt-i18n-'));
+  build(dir);
+  for (const file of ['index.html', 'en/index.html', 'en/doctrine.html', 'en/404.html', 'sitemap.xml']) {
+    assert.ok(fs.existsSync(path.join(dir, file)), file);
+  }
+  fs.rmSync(dir, { recursive: true, force: true });
+});
