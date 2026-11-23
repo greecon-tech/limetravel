@@ -94,3 +94,9 @@ Kontrolli i cilësisë: `node scripts/check-blog.js` (e ekzekutojnë edhe testet
 Faqet janë te `content/guides/<id>.<sq|en>.md` (front matter JSON + Markdown) dhe shfaqen te `/destinacione/`, `/aktivitete/`, `/en/destinations/`, `/en/activities/`.
 Çdo faqe ka “Në një vështrim”, itinerar ideor (destinacionet), vendndodhje me lidhje te OpenStreetMap, FAQ, burime dhe JSON-LD
 (`TouristDestination`, `FAQPage`, `BreadcrumbList`, `TouristTrip`). Kontrolli: `node scripts/check-guides.js`. Shënimet ligjore: `content/LEGAL-NOTES.md`.
+
+## Foto dhe harta interaktive
+
+Fotot e faqeve vijnë nga Wikimedia Commons (licenca CC) dhe regjistrohen te `content/photos.json`; kredia shfaqet pranë çdo fotoje.
+Harta e destinacioneve përdor Leaflet (te `public/assets/vendor/leaflet`) dhe pllaka OpenStreetMap, dhe ngarkohet vetëm kur vizitori klikon butonin.
+Marketing: `content/MARKETING.md`. Tekste sociale: `content/social/`.

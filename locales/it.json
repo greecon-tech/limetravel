@@ -227,5 +227,6 @@
  "js.copied": "Messaggio copiato. Può incollarlo dove preferisce e inviarcelo.",
  "js.copy_failed": "Copia automatica non riuscita. Il messaggio è selezionato: lo copi e ce lo invii.",
  "header.destinacione": "Destinazioni",
- "header.aktivitete": "Attività"
+ "header.aktivitete": "Attività",
+ "privatesia.map-note": "Le pagine delle destinazioni hanno una mappa facoltativa. Viene caricata da OpenStreetMap solo quando scegli di mostrarla e, in quel momento, il tuo browser si collega ai server di OpenStreetMap, che possono vedere il tuo indirizzo IP."
 }

@@ -10,29 +10,107 @@
   "summary": "Ecja në natyrë në Shqipëri përqendrohet në Alpet Shqiptare, por ka edhe Llogaranë dhe shtigje bregdetare. Sezoni praktik në Alpe është rreth qershorit deri në shtator. Shtegu Theth–Valbonë është rreth 14–16 km; Peaks of the Balkans është një itinerar prej 192 km nëpër Shqipëri, Kosovë dhe Mal të Zi.",
   "region": "Në të gjithë Shqipërinë",
   "order": 4,
+  "photo": "hiking-albania",
+  "map": {
+    "line": false,
+    "stops": [
+      {
+        "name": "Theth",
+        "lat": 42.3947,
+        "lon": 19.7751
+      },
+      {
+        "name": "Valbonë",
+        "lat": 42.417,
+        "lon": 20.0094
+      },
+      {
+        "name": "Llogara",
+        "lat": 40.213,
+        "lon": 19.5753
+      }
+    ]
+  },
   "facts": [
-    { "label": "Zona kryesore", "value": "Alpet Shqiptare (Theth dhe Valbonë) dhe Parku Kombëtar i Llogarasë" },
-    { "label": "Shtegu Theth–Valbonë", "value": "Rreth 14–16 km, rreth 6–8 orë, mesatar (sipas burimeve; shifrat ndryshojnë)" },
-    { "label": "Peaks of the Balkans", "value": "Itinerar rrethor prej 192 km, 10 etapa, në Shqipëri, Kosovë dhe Mal të Zi; kërkohen leje kufitare" },
-    { "label": "Sezoni në Alpe", "value": "Rreth qershorit deri në shtator; në dimër ka rrezik bore" },
-    { "label": "Urgjenca", "value": "112" }
+    {
+      "label": "Zona kryesore",
+      "value": "Alpet Shqiptare (Theth dhe Valbonë) dhe Parku Kombëtar i Llogarasë"
+    },
+    {
+      "label": "Shtegu Theth–Valbonë",
+      "value": "Rreth 14–16 km, rreth 6–8 orë, mesatar (sipas burimeve; shifrat ndryshojnë)"
+    },
+    {
+      "label": "Peaks of the Balkans",
+      "value": "Itinerar rrethor prej 192 km, 10 etapa, në Shqipëri, Kosovë dhe Mal të Zi; kërkohen leje kufitare"
+    },
+    {
+      "label": "Sezoni në Alpe",
+      "value": "Rreth qershorit deri në shtator; në dimër ka rrezik bore"
+    },
+    {
+      "label": "Urgjenca",
+      "value": "112"
+    }
   ],
-  "related": ["albanian-alps", "albanian-riviera", "cultural-discovery"],
-  "tags": ["ecje", "Alpet Shqiptare", "Peaks of the Balkans", "natyrë"],
+  "related": [
+    "albanian-alps",
+    "albanian-riviera",
+    "cultural-discovery"
+  ],
+  "tags": [
+    "ecje",
+    "Alpet Shqiptare",
+    "Peaks of the Balkans",
+    "natyrë"
+  ],
   "faq": [
-    { "q": "Ku mund të ecet në Shqipëri?", "a": "Zona më e njohur janë Alpet Shqiptare, me Thethin dhe Valbonën. Ka edhe Parkun Kombëtar të Llogarasë dhe shtigje bregdetare në jug, të përshkruara në një dokument të GIZ-it të publikuar nga Agjencia Kombëtare e Turizmit." },
-    { "q": "Kur është sezoni i ecjes?", "a": "Në Alpe, rreth qershorit deri në shtator, ndonjëherë deri në fillim të tetorit. Jashtë sezonit ka rrezik bore dhe shumë guesthouse-e mbyllen." },
-    { "q": "Çfarë është Peaks of the Balkans?", "a": "Është një itinerar rrethor prej 192 km në Shqipëri, Kosovë dhe Mal të Zi, me 10 etapa. Faqet e tij thonë se kërkohen leje kufitare; burimet ndryshojnë për procedurën, ndaj kontrolloni para se të planifikoni." },
-    { "q": "Çfarë duhet të marr me vete?", "a": "Faqja e etapës Theth–Valbonë këshillon ujë të mjaftueshëm dhe këpucë të mira dhe këshillon të shmangni motin e keq. Merrni edhe veshje për ndryshimin e motit." },
-    { "q": "A është e sigurt ecja vetëm?", "a": "Në zonat e largëta përgjigjja e urgjencës mund të vonojë. Lajmëroni mikpritësin për itinerarin tuaj, mos ecni në mot të paqëndrueshëm dhe, kur nuk jeni të sigurt, zgjidhni një udhëheqës të licencuar." }
+    {
+      "q": "Ku mund të ecet në Shqipëri?",
+      "a": "Zona më e njohur janë Alpet Shqiptare, me Thethin dhe Valbonën. Ka edhe Parkun Kombëtar të Llogarasë dhe shtigje bregdetare në jug, të përshkruara në një dokument të GIZ-it të publikuar nga Agjencia Kombëtare e Turizmit."
+    },
+    {
+      "q": "Kur është sezoni i ecjes?",
+      "a": "Në Alpe, rreth qershorit deri në shtator, ndonjëherë deri në fillim të tetorit. Jashtë sezonit ka rrezik bore dhe shumë guesthouse-e mbyllen."
+    },
+    {
+      "q": "Çfarë është Peaks of the Balkans?",
+      "a": "Është një itinerar rrethor prej 192 km në Shqipëri, Kosovë dhe Mal të Zi, me 10 etapa. Faqet e tij thonë se kërkohen leje kufitare; burimet ndryshojnë për procedurën, ndaj kontrolloni para se të planifikoni."
+    },
+    {
+      "q": "Çfarë duhet të marr me vete?",
+      "a": "Faqja e etapës Theth–Valbonë këshillon ujë të mjaftueshëm dhe këpucë të mira dhe këshillon të shmangni motin e keq. Merrni edhe veshje për ndryshimin e motit."
+    },
+    {
+      "q": "A është e sigurt ecja vetëm?",
+      "a": "Në zonat e largëta përgjigjja e urgjencës mund të vonojë. Lajmëroni mikpritësin për itinerarin tuaj, mos ecni në mot të paqëndrueshëm dhe, kur nuk jeni të sigurt, zgjidhni një udhëheqës të licencuar."
+    }
   ],
   "sources": [
-    { "title": "AKZM: Parku Kombëtar i Alpeve", "url": "https://akzm.gov.al/parku-kombetar-i-alpeve/" },
-    { "title": "Peaks of the Balkans: etapa Theth–Valbonë", "url": "https://peaksofthebalkans.info/?p=1817" },
-    { "title": "Peaks of the Balkans: përshkrimi i itinerarit", "url": "https://peaksofthebalkans.info/?p=2736" },
-    { "title": "Wikipedia: Parku Kombëtar i Llogarasë", "url": "https://en.wikipedia.org/wiki/Llogara_National_Park" },
-    { "title": "AKT: përshkrime të shtigjeve bregdetare të jugut (PDF)", "url": "https://akt.gov.al/wp-content/uploads/2022/06/Southern-Coastal-Trail-Descriptions-Final-Version.pdf" },
-    { "title": "UK FCDO: këshilla udhëtimi për Shqipërinë", "url": "https://www.gov.uk/foreign-travel-advice/albania" }
+    {
+      "title": "AKZM: Parku Kombëtar i Alpeve",
+      "url": "https://akzm.gov.al/parku-kombetar-i-alpeve/"
+    },
+    {
+      "title": "Peaks of the Balkans: etapa Theth–Valbonë",
+      "url": "https://peaksofthebalkans.info/?p=1817"
+    },
+    {
+      "title": "Peaks of the Balkans: përshkrimi i itinerarit",
+      "url": "https://peaksofthebalkans.info/?p=2736"
+    },
+    {
+      "title": "Wikipedia: Parku Kombëtar i Llogarasë",
+      "url": "https://en.wikipedia.org/wiki/Llogara_National_Park"
+    },
+    {
+      "title": "AKT: përshkrime të shtigjeve bregdetare të jugut (PDF)",
+      "url": "https://akt.gov.al/wp-content/uploads/2022/06/Southern-Coastal-Trail-Descriptions-Final-Version.pdf"
+    },
+    {
+      "title": "UK FCDO: këshilla udhëtimi për Shqipërinë",
+      "url": "https://www.gov.uk/foreign-travel-advice/albania"
+    }
   ],
   "updated": "2026-11-23",
   "reviewed": "2026-11-23"

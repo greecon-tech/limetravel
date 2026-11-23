@@ -227,5 +227,6 @@
  "js.copied": "Message copied. You can paste it wherever you like and send it to us.",
  "js.copy_failed": "It could not be copied automatically. The message is selected — please copy it and send it to us.",
  "header.destinacione": "Destinations",
- "header.aktivitete": "Activities"
+ "header.aktivitete": "Activities",
+ "privatesia.map-note": "Destination pages have an optional map. It loads from OpenStreetMap only when you choose to show it, and at that point your browser connects to OpenStreetMap servers, which can see your IP address."
 }

@@ -227,5 +227,6 @@
  "js.copied": "Mesazhi u kopjua. Mund ta ngjisni ku të dëshironi dhe na e dërgoni.",
  "js.copy_failed": "Nuk u kopjua automatikisht. Mesazhi është i përzgjedhur — kopjojeni dhe na e dërgoni.",
  "header.destinacione": "Destinacione",
- "header.aktivitete": "Aktivitete"
+ "header.aktivitete": "Aktivitete",
+ "privatesia.map-note": "Faqet e destinacioneve kanë një hartë opsionale. Ajo ngarkohet nga OpenStreetMap vetëm kur ju e shfaqni, dhe në atë moment shfletuesi juaj lidhet me serverët e OpenStreetMap, të cilët shohin adresën tuaj IP."
 }

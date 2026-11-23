@@ -71,3 +71,6 @@ Të njëjtat rregulla fakti dhe SEO/AEO si për blogun, me këto shtesa (kontrol
 - Itineraret janë IDE, jo programe të konfirmuara; nuk përmbajnë çmime. Çmimi dhe disponueshmëria jepen vetëm pas verifikimit nga ekipi.
 - Mos kopjoni tekste, itinerare, harta, foto apo çmime nga faqe të operatorëve të tjerë. Përdorni vetëm burime publike zyrtare dhe tekst origjinal.
 - Pa foto me watermark ose pa licencë të dokumentuar (shih `content/LEGAL-NOTES.md`).
+- Foto: çdo faqe guide ka `"photo": "<id>"` të regjistruar te `content/photos.json` (autor, licencë CC BY/CC BY-SA/CC0/PD, burimi në Wikimedia Commons)
+  dhe skedarët `public/assets/img/places/<id>-800.webp`, `-1800.webp`, `-og.jpg`. Mos përdorni foto pa licencë të dokumentuar.
+- Harta: çdo destinacion ka `"map": {"line": true|false, "stops": [{name, lat, lon, day}]}`. Koordinatat verifikohen nga OpenStreetMap (Nominatim).

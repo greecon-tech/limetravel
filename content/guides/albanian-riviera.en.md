@@ -10,41 +10,180 @@
   "summary": "The Albanian Riviera runs from Vlorë to Sarandë, through Llogara and Himara. Ksamil and Sarandë are crowded from June to September; autumn is quieter. Butrint is a UNESCO World Heritage site, and Sarandë has ferry links to Corfu.",
   "region": "Ionian coast",
   "order": 2,
-  "location": { "label": "Himarë", "lat": 40.1, "lon": 19.75 },
+  "photo": "albanian-riviera",
+  "location": {
+    "label": "Himarë",
+    "lat": 40.1,
+    "lon": 19.75
+  },
+  "map": {
+    "line": true,
+    "stops": [
+      {
+        "name": "Vlorë",
+        "lat": 40.4708,
+        "lon": 19.4913,
+        "day": 1
+      },
+      {
+        "name": "Llogara",
+        "lat": 40.213,
+        "lon": 19.5753,
+        "day": 1
+      },
+      {
+        "name": "Dhërmi",
+        "lat": 40.1512,
+        "lon": 19.6414,
+        "day": 2
+      },
+      {
+        "name": "Himara",
+        "lat": 40.1022,
+        "lon": 19.7473,
+        "day": 2
+      },
+      {
+        "name": "Porto Palermo Castle",
+        "lat": 40.0622,
+        "lon": 19.7907,
+        "day": 2
+      },
+      {
+        "name": "Sarandë",
+        "lat": 39.8752,
+        "lon": 20.0065,
+        "day": 3
+      },
+      {
+        "name": "Butrint",
+        "lat": 39.7459,
+        "lon": 20.021,
+        "day": 3
+      },
+      {
+        "name": "The Blue Eye",
+        "lat": 39.9238,
+        "lon": 20.1925,
+        "day": 3
+      },
+      {
+        "name": "Ksamil",
+        "lat": 39.7701,
+        "lon": 20.0038,
+        "day": 4
+      }
+    ]
+  },
   "facts": [
-    { "label": "Location", "value": "Ionian coast, from Vlorë to Ksamil" },
-    { "label": "Main road", "value": "SH8 from Fier through Vlorë, Llogara, Dhërmi and Himara to Sarandë (about 126 km according to encyclopaedic sources)" },
-    { "label": "Best season", "value": "Summer for the beach; one guide suggests September to December for good weather and fewer visitors" },
-    { "label": "Heritage", "value": "Butrint (UNESCO World Heritage), the Blue Eye (natural monument), Llogara National Park" },
-    { "label": "Link to Greece", "value": "Sarandë–Corfu ferries (several operators; timetables change by season)" },
-    { "label": "Nearest airport", "value": "Tirana (TIA); Vlorë airport has no confirmed scheduled service" }
+    {
+      "label": "Location",
+      "value": "Ionian coast, from Vlorë to Ksamil"
+    },
+    {
+      "label": "Main road",
+      "value": "SH8 from Fier through Vlorë, Llogara, Dhërmi and Himara to Sarandë (about 126 km according to encyclopaedic sources)"
+    },
+    {
+      "label": "Best season",
+      "value": "Summer for the beach; one guide suggests September to December for good weather and fewer visitors"
+    },
+    {
+      "label": "Heritage",
+      "value": "Butrint (UNESCO World Heritage), the Blue Eye (natural monument), Llogara National Park"
+    },
+    {
+      "label": "Link to Greece",
+      "value": "Sarandë–Corfu ferries (several operators; timetables change by season)"
+    },
+    {
+      "label": "Nearest airport",
+      "value": "Tirana (TIA); Vlorë airport has no confirmed scheduled service"
+    }
   ],
   "itinerary": {
     "title": "Idea itinerary: 4 days on the Ionian coast",
     "days": [
-      { "title": "Day 1: Tirana – Vlorë – Llogara", "text": "Drive south through Vlorë. Stop in Llogara National Park among the pine forests before the descent to the coast." },
-      { "title": "Day 2: Dhërmi and Himara", "text": "Stay on the coast between Dhërmi and Himara: the old village above the sea, Himara castle and, about 8 km further south, Porto Palermo Castle." },
-      { "title": "Day 3: Sarandë and Butrint", "text": "Visit Butrint, a World Heritage site, and, if time allows, the Blue Eye, about 18 km from Sarandë. Opening times are checked locally." },
-      { "title": "Day 4: Ksamil and the return", "text": "Morning in Ksamil: beaches and small islands by boat. Return to Tirana or continue to Corfu by ferry." }
+      {
+        "title": "Day 1: Tirana – Vlorë – Llogara",
+        "text": "Drive south through Vlorë. Stop in Llogara National Park among the pine forests before the descent to the coast."
+      },
+      {
+        "title": "Day 2: Dhërmi and Himara",
+        "text": "Stay on the coast between Dhërmi and Himara: the old village above the sea, Himara castle and, about 8 km further south, Porto Palermo Castle."
+      },
+      {
+        "title": "Day 3: Sarandë and Butrint",
+        "text": "Visit Butrint, a World Heritage site, and, if time allows, the Blue Eye, about 18 km from Sarandë. Opening times are checked locally."
+      },
+      {
+        "title": "Day 4: Ksamil and the return",
+        "text": "Morning in Ksamil: beaches and small islands by boat. Return to Tirana or continue to Corfu by ferry."
+      }
     ]
   },
-  "related": ["southern-heritage", "cultural-discovery", "albanian-alps"],
-  "tags": ["Albanian Riviera", "Butrint", "Sarandë", "Himara"],
+  "related": [
+    "southern-heritage",
+    "cultural-discovery",
+    "albanian-alps"
+  ],
+  "tags": [
+    "Albanian Riviera",
+    "Butrint",
+    "Sarandë",
+    "Himara"
+  ],
   "faq": [
-    { "q": "How far is the Riviera from Tirana?", "a": "We did not find an official source for distances. Unofficial sources give about 155 km and about 2 hours to Vlorë, and more to Sarandë. Times vary with traffic and season." },
-    { "q": "When is the best time to visit?", "a": "For the beach, summer, but Ksamil and Sarandë are very crowded from June to September. One guide recommends September to December for good weather and fewer visitors." },
-    { "q": "Is there a ferry from Sarandë to Corfu?", "a": "Yes, more than one company operates. Frequency changes by season and the winter timetable is not confirmed here, so check the operator. Bring your passport." },
-    { "q": "Do I need cash on the coast?", "a": "Unofficial sources say many places between Vlorë and Sarandë mainly take cash and ATMs can fail in season. This is not officially confirmed; plan ahead." },
-    { "q": "Is driving safe?", "a": "The UK government’s advice for Albania says driving is often aggressive and rural roads are poor. Drive carefully and respect speed limits." }
+    {
+      "q": "How far is the Riviera from Tirana?",
+      "a": "We did not find an official source for distances. Unofficial sources give about 155 km and about 2 hours to Vlorë, and more to Sarandë. Times vary with traffic and season."
+    },
+    {
+      "q": "When is the best time to visit?",
+      "a": "For the beach, summer, but Ksamil and Sarandë are very crowded from June to September. One guide recommends September to December for good weather and fewer visitors."
+    },
+    {
+      "q": "Is there a ferry from Sarandë to Corfu?",
+      "a": "Yes, more than one company operates. Frequency changes by season and the winter timetable is not confirmed here, so check the operator. Bring your passport."
+    },
+    {
+      "q": "Do I need cash on the coast?",
+      "a": "Unofficial sources say many places between Vlorë and Sarandë mainly take cash and ATMs can fail in season. This is not officially confirmed; plan ahead."
+    },
+    {
+      "q": "Is driving safe?",
+      "a": "The UK government’s advice for Albania says driving is often aggressive and rural roads are poor. Drive carefully and respect speed limits."
+    }
   ],
   "sources": [
-    { "title": "AKT: Albanian Riviera", "url": "https://akt.gov.al/en/destinacioni/riviera/" },
-    { "title": "AKT: Himara", "url": "https://akt.gov.al/en/cities/chimera/" },
-    { "title": "AKT: Sarandë", "url": "https://akt.gov.al/en/qytetet/sarande/" },
-    { "title": "AKT: Blue Eye", "url": "https://akt.gov.al/en/monumente-natyrore/syri-i-kalter/" },
-    { "title": "AKT: Butrint, a microcosm of the Mediterranean", "url": "https://akt.gov.al/en/unesco/Butrint--a-microcosm-of-the-Mediterranean--a-UNESCO-heritage-site/" },
-    { "title": "UK FCDO: safety and security in Albania", "url": "https://www.gov.uk/foreign-travel-advice/albania/safety-and-security" },
-    { "title": "Wikipedia: SH8 (Albania)", "url": "https://en.wikipedia.org/wiki/SH_8_(Albania)" }
+    {
+      "title": "AKT: Albanian Riviera",
+      "url": "https://akt.gov.al/en/destinacioni/riviera/"
+    },
+    {
+      "title": "AKT: Himara",
+      "url": "https://akt.gov.al/en/cities/chimera/"
+    },
+    {
+      "title": "AKT: Sarandë",
+      "url": "https://akt.gov.al/en/qytetet/sarande/"
+    },
+    {
+      "title": "AKT: Blue Eye",
+      "url": "https://akt.gov.al/en/monumente-natyrore/syri-i-kalter/"
+    },
+    {
+      "title": "AKT: Butrint, a microcosm of the Mediterranean",
+      "url": "https://akt.gov.al/en/unesco/Butrint--a-microcosm-of-the-Mediterranean--a-UNESCO-heritage-site/"
+    },
+    {
+      "title": "UK FCDO: safety and security in Albania",
+      "url": "https://www.gov.uk/foreign-travel-advice/albania/safety-and-security"
+    },
+    {
+      "title": "Wikipedia: SH8 (Albania)",
+      "url": "https://en.wikipedia.org/wiki/SH_8_(Albania)"
+    }
   ],
   "updated": "2026-11-23",
   "reviewed": "2026-11-23"

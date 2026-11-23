@@ -597,6 +597,9 @@ a:hover > .link .icon {
   position: absolute;
   top: 92px;
   right: clamp(16px, 3vw, 28px);
+  max-width: 46ch;
+  text-align: right;
+  z-index: 1;
   font-size: 12px;
   color: rgba(255, 255, 255, 0.72);
 }
@@ -1681,6 +1684,157 @@ a:hover > .link .icon {
   .itinerary__days li {
     padding-left: 56px;
   }
+}
+.guide-photo {
+  margin: 28px 0 0;
+}
+.guide-photo img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+  background: var(--tint);
+}
+.guide-photo figcaption,
+.card__credit {
+  margin-top: 8px;
+  font-size: 12.5px;
+  line-height: 1.4;
+  color: var(--muted);
+}
+.guide-photo figcaption a,
+.card__credit a {
+  color: inherit;
+  text-underline-offset: 2px;
+}
+.card--photo {
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  transition: border-color 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+.card--photo:hover {
+  border-color: var(--line-strong);
+  box-shadow: var(--shadow);
+}
+.card--photo .card__link {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+.card__img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  background: var(--tint);
+}
+.card__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 10px;
+  padding: 24px 24px 20px;
+}
+.card__body .link {
+  margin-top: auto;
+  padding-top: 8px;
+}
+.card--photo .card__credit {
+  margin: 0;
+  padding: 0 24px 16px;
+}
+.map-block {
+  margin-top: 56px;
+}
+.map-block > h2 {
+  margin-bottom: 14px;
+  font-size: clamp(24px, 3vw, 30px);
+}
+.map {
+  position: relative;
+  overflow: hidden;
+  min-height: 360px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--tint);
+}
+.map__facade {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  min-height: 360px;
+  padding: 32px;
+  text-align: center;
+  background:
+    radial-gradient(circle at 25% 30%, rgba(166, 206, 57, 0.22), transparent 45%),
+    radial-gradient(circle at 78% 70%, rgba(18, 61, 43, 0.12), transparent 50%),
+    var(--tint);
+}
+.map__facade p {
+  max-width: 46ch;
+  font-size: 15px;
+  color: var(--muted);
+}
+.map__facade[hidden],
+.map__canvas[hidden] {
+  display: none;
+}
+.map__canvas {
+  height: 420px;
+}
+.map__hint {
+  margin-top: 10px;
+  font-size: 13.5px;
+  color: var(--muted);
+}
+.map__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin-top: 14px;
+  font-size: 14.5px;
+}
+.map__legend li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.map__legend small {
+  color: var(--muted);
+}
+.map__num,
+.map-pin span {
+  display: inline-grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--forest);
+  color: var(--cream);
+  font: 600 13px/1 var(--sans);
+}
+.map-pin span {
+  width: 30px;
+  height: 30px;
+  border: 2px solid var(--lime);
+  box-shadow: 0 2px 8px rgba(9, 41, 29, 0.35);
+}
+.hero__credit a {
+  color: inherit;
+  text-underline-offset: 2px;
+}
+.hero__credit--corner {
+  position: absolute;
+  top: auto;
+  right: clamp(16px, 3vw, 28px);
+  bottom: 18px;
+  max-width: 46ch;
+  text-align: right;
 }
 .post__faq,
 .post__sources,

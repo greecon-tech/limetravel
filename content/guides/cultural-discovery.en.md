@@ -10,27 +10,99 @@
   "summary": "Cultural discovery in Albania brings together Berat and Gjirokastër, two historic centres on the UNESCO List, and Butrint on the coast. Spring and autumn are usually recommended. Opening times and entry prices are checked locally.",
   "region": "Across Albania",
   "order": 5,
+  "photo": "cultural-discovery",
+  "map": {
+    "line": false,
+    "stops": [
+      {
+        "name": "Berat",
+        "lat": 40.7019,
+        "lon": 19.9581
+      },
+      {
+        "name": "Gjirokastër",
+        "lat": 40.0771,
+        "lon": 20.1393
+      },
+      {
+        "name": "Butrint",
+        "lat": 39.7459,
+        "lon": 20.021
+      }
+    ]
+  },
   "facts": [
-    { "label": "Main places", "value": "Berat, Gjirokastër, Butrint" },
-    { "label": "UNESCO", "value": "Historic Centres of Berat and Gjirokastra; Butrint" },
-    { "label": "Best season", "value": "Spring and autumn, according to guides; summer is hot and crowded" },
-    { "label": "Recommended time", "value": "At least 3 days to combine Berat, Gjirokastër and Butrint" },
-    { "label": "Tip", "value": "Cobbled streets; opening times and prices are checked locally" }
+    {
+      "label": "Main places",
+      "value": "Berat, Gjirokastër, Butrint"
+    },
+    {
+      "label": "UNESCO",
+      "value": "Historic Centres of Berat and Gjirokastra; Butrint"
+    },
+    {
+      "label": "Best season",
+      "value": "Spring and autumn, according to guides; summer is hot and crowded"
+    },
+    {
+      "label": "Recommended time",
+      "value": "At least 3 days to combine Berat, Gjirokastër and Butrint"
+    },
+    {
+      "label": "Tip",
+      "value": "Cobbled streets; opening times and prices are checked locally"
+    }
   ],
-  "related": ["southern-heritage", "albanian-riviera", "hiking-albania"],
-  "tags": ["heritage", "UNESCO", "Berat", "Gjirokastër"],
+  "related": [
+    "southern-heritage",
+    "albanian-riviera",
+    "hiking-albania"
+  ],
+  "tags": [
+    "heritage",
+    "UNESCO",
+    "Berat",
+    "Gjirokastër"
+  ],
   "faq": [
-    { "q": "What are the best-known cultural sites in Albania?", "a": "Berat and Gjirokastër, historic centres on the UNESCO List, and Butrint, a World Heritage site on the southern coast." },
-    { "q": "How many days do I need?", "a": "Berat can be seen on a long day from Tirana. For both towns and Butrint, plan at least 3 days, because the distances between them are long." },
-    { "q": "When is the best time to go?", "a": "Guides usually recommend spring and autumn, because summer is hot and crowded." },
-    { "q": "Are official opening times and prices published?", "a": "We did not find official opening times and prices in the sources we read. Check locally or ask us before you travel." }
+    {
+      "q": "What are the best-known cultural sites in Albania?",
+      "a": "Berat and Gjirokastër, historic centres on the UNESCO List, and Butrint, a World Heritage site on the southern coast."
+    },
+    {
+      "q": "How many days do I need?",
+      "a": "Berat can be seen on a long day from Tirana. For both towns and Butrint, plan at least 3 days, because the distances between them are long."
+    },
+    {
+      "q": "When is the best time to go?",
+      "a": "Guides usually recommend spring and autumn, because summer is hot and crowded."
+    },
+    {
+      "q": "Are official opening times and prices published?",
+      "a": "We did not find official opening times and prices in the sources we read. Check locally or ask us before you travel."
+    }
   ],
   "sources": [
-    { "title": "AKT: Berat", "url": "https://akt.gov.al/en/cities/berat/" },
-    { "title": "AKT: Gjirokastër", "url": "https://akt.gov.al/en/cities/gjirokaster/" },
-    { "title": "AKT: Butrint, a microcosm of the Mediterranean", "url": "https://akt.gov.al/en/unesco/Butrint--a-microcosm-of-the-Mediterranean--a-UNESCO-heritage-site/" },
-    { "title": "Wikipedia: Historic Centres of Berat and Gjirokastra (UNESCO)", "url": "https://en.wikipedia.org/wiki/Historic_Centres_of_Berat_and_Gjirokast%C3%ABr" },
-    { "title": "Wikipedia: Butrint", "url": "https://en.wikipedia.org/wiki/Butrint" }
+    {
+      "title": "AKT: Berat",
+      "url": "https://akt.gov.al/en/cities/berat/"
+    },
+    {
+      "title": "AKT: Gjirokastër",
+      "url": "https://akt.gov.al/en/cities/gjirokaster/"
+    },
+    {
+      "title": "AKT: Butrint, a microcosm of the Mediterranean",
+      "url": "https://akt.gov.al/en/unesco/Butrint--a-microcosm-of-the-Mediterranean--a-UNESCO-heritage-site/"
+    },
+    {
+      "title": "Wikipedia: Historic Centres of Berat and Gjirokastra (UNESCO)",
+      "url": "https://en.wikipedia.org/wiki/Historic_Centres_of_Berat_and_Gjirokast%C3%ABr"
+    },
+    {
+      "title": "Wikipedia: Butrint",
+      "url": "https://en.wikipedia.org/wiki/Butrint"
+    }
   ],
   "updated": "2026-11-23",
   "reviewed": "2026-11-23"

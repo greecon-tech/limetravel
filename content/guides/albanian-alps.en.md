@@ -10,39 +10,142 @@
   "summary": "Theth and Valbona are two valleys of the Albanian Alps National Park in northern Albania. The best hiking season is roughly June to September; in winter the road to Theth can be closed by snow. The Theth–Valbona hike is about 14–16 km and takes about 6–8 hours.",
   "region": "North",
   "order": 1,
-  "location": { "label": "Theth", "lat": 42.4, "lon": 19.77 },
+  "photo": "albanian-alps",
+  "location": {
+    "label": "Theth",
+    "lat": 42.4,
+    "lon": 19.77
+  },
+  "map": {
+    "line": true,
+    "stops": [
+      {
+        "name": "Tirana",
+        "lat": 41.3284,
+        "lon": 19.818,
+        "day": 1
+      },
+      {
+        "name": "Shkodër",
+        "lat": 42.0681,
+        "lon": 19.5121,
+        "day": 1
+      },
+      {
+        "name": "Theth",
+        "lat": 42.3947,
+        "lon": 19.7751,
+        "day": 2
+      },
+      {
+        "name": "Valbona",
+        "lat": 42.417,
+        "lon": 20.0094,
+        "day": 3
+      }
+    ]
+  },
   "facts": [
-    { "label": "Location", "value": "Northern Albania, in the Albanian Alps National Park" },
-    { "label": "Status", "value": "National Park (IUCN category II), declared by Council of Ministers decision no. 59, 26 January 2022" },
-    { "label": "Best season", "value": "Roughly June to September (some sources add early October)" },
-    { "label": "Nearest airport", "value": "Tirana, Nënë Tereza (TIA)" },
-    { "label": "Road to Theth", "value": "Tirana – Shkodër – Koplik – Boga – Qafa e Thorës – Theth (SH21)" },
-    { "label": "Theth–Valbona hike", "value": "About 14–16 km, about 6–8 hours, pass at about 1,760–1,850 m (figures vary by source)" }
+    {
+      "label": "Location",
+      "value": "Northern Albania, in the Albanian Alps National Park"
+    },
+    {
+      "label": "Status",
+      "value": "National Park (IUCN category II), declared by Council of Ministers decision no. 59, 26 January 2022"
+    },
+    {
+      "label": "Best season",
+      "value": "Roughly June to September (some sources add early October)"
+    },
+    {
+      "label": "Nearest airport",
+      "value": "Tirana, Nënë Tereza (TIA)"
+    },
+    {
+      "label": "Road to Theth",
+      "value": "Tirana – Shkodër – Koplik – Boga – Qafa e Thorës – Theth (SH21)"
+    },
+    {
+      "label": "Theth–Valbona hike",
+      "value": "About 14–16 km, about 6–8 hours, pass at about 1,760–1,850 m (figures vary by source)"
+    }
   ],
   "itinerary": {
     "title": "Idea itinerary: 3 days in Theth and Valbona",
     "days": [
-      { "title": "Day 1: Tirana – Shkodër – Theth", "text": "Drive or take organised transport through Shkodër, Koplik and the Thorë pass. Allow plenty of time, as the last stretch is narrow and winding. A quiet evening in the village." },
-      { "title": "Day 2: Theth and its surroundings", "text": "Visit the Lock-in Tower and the village church, and take a short valley walk such as the one to the Blue Eye of Theth (about 1 hour, according to guidebook sources). Timing depends on the weather." },
-      { "title": "Day 3: The Theth–Valbona crossing", "text": "A long walk between the two valleys, possible only in season. Arrange your onward or return transfer in advance, as the logistics are not standardised." }
+      {
+        "title": "Day 1: Tirana – Shkodër – Theth",
+        "text": "Drive or take organised transport through Shkodër, Koplik and the Thorë pass. Allow plenty of time, as the last stretch is narrow and winding. A quiet evening in the village."
+      },
+      {
+        "title": "Day 2: Theth and its surroundings",
+        "text": "Visit the Lock-in Tower and the village church, and take a short valley walk such as the one to the Blue Eye of Theth (about 1 hour, according to guidebook sources). Timing depends on the weather."
+      },
+      {
+        "title": "Day 3: The Theth–Valbona crossing",
+        "text": "A long walk between the two valleys, possible only in season. Arrange your onward or return transfer in advance, as the logistics are not standardised."
+      }
     ]
   },
-  "related": ["hiking-albania", "albanian-riviera", "southern-heritage"],
-  "tags": ["Albanian Alps", "Theth", "Valbona", "hiking"],
+  "related": [
+    "hiking-albania",
+    "albanian-riviera",
+    "southern-heritage"
+  ],
+  "tags": [
+    "Albanian Alps",
+    "Theth",
+    "Valbona",
+    "hiking"
+  ],
   "faq": [
-    { "q": "How do I get from Tirana to Theth?", "a": "The route usually goes through Shkodër, Koplik, Boga and the Thorë pass, then the SH21 to the village. Journey times depend on how you travel and on the weather; sources give 1.5 to 3 hours for the Shkodër–Theth section alone. Check road conditions before you leave." },
-    { "q": "When is the best time to visit Theth and Valbona?", "a": "For hiking, the most suitable season is roughly June to September. In winter snow can close the road to Theth and many guesthouses shut." },
-    { "q": "How hard is the Theth–Valbona hike?", "a": "It is a long day, about 14–16 km and about 6–8 hours, with a significant climb. Sources rate it as moderate. It needs suitable footwear, water and stable weather." },
-    { "q": "Do I need a guide or a permit for the Theth–Valbona crossing?", "a": "The sources we read do not confirm an official guide requirement for this route within Albania. Cross-border trails such as Peaks of the Balkans require border permits. Check the official source before you travel." },
-    { "q": "What is the emergency number in the mountains?", "a": "The general emergency number in Albania is 112. In remote areas the response can be slow, so plan carefully and tell your host about your route." }
+    {
+      "q": "How do I get from Tirana to Theth?",
+      "a": "The route usually goes through Shkodër, Koplik, Boga and the Thorë pass, then the SH21 to the village. Journey times depend on how you travel and on the weather; sources give 1.5 to 3 hours for the Shkodër–Theth section alone. Check road conditions before you leave."
+    },
+    {
+      "q": "When is the best time to visit Theth and Valbona?",
+      "a": "For hiking, the most suitable season is roughly June to September. In winter snow can close the road to Theth and many guesthouses shut."
+    },
+    {
+      "q": "How hard is the Theth–Valbona hike?",
+      "a": "It is a long day, about 14–16 km and about 6–8 hours, with a significant climb. Sources rate it as moderate. It needs suitable footwear, water and stable weather."
+    },
+    {
+      "q": "Do I need a guide or a permit for the Theth–Valbona crossing?",
+      "a": "The sources we read do not confirm an official guide requirement for this route within Albania. Cross-border trails such as Peaks of the Balkans require border permits. Check the official source before you travel."
+    },
+    {
+      "q": "What is the emergency number in the mountains?",
+      "a": "The general emergency number in Albania is 112. In remote areas the response can be slow, so plan carefully and tell your host about your route."
+    }
   ],
   "sources": [
-    { "title": "AKZM: Alps National Park (Albanian agency for protected areas)", "url": "https://akzm.gov.al/parku-kombetar-i-alpeve/" },
-    { "title": "AKT: Theth National Park", "url": "https://akt.gov.al/en/attractions/Theth-National-Park/" },
-    { "title": "Wikivoyage: Theth", "url": "https://en.wikivoyage.org/wiki/Thethi" },
-    { "title": "Wikipedia: Alps of Albania National Park", "url": "https://en.wikipedia.org/wiki/Alps_of_Albania_National_Park" },
-    { "title": "Peaks of the Balkans: Theth–Valbona stage", "url": "https://peaksofthebalkans.info/?p=1817" },
-    { "title": "UK FCDO: travel advice for Albania", "url": "https://www.gov.uk/foreign-travel-advice/albania" }
+    {
+      "title": "AKZM: Alps National Park (Albanian agency for protected areas)",
+      "url": "https://akzm.gov.al/parku-kombetar-i-alpeve/"
+    },
+    {
+      "title": "AKT: Theth National Park",
+      "url": "https://akt.gov.al/en/attractions/Theth-National-Park/"
+    },
+    {
+      "title": "Wikivoyage: Theth",
+      "url": "https://en.wikivoyage.org/wiki/Thethi"
+    },
+    {
+      "title": "Wikipedia: Alps of Albania National Park",
+      "url": "https://en.wikipedia.org/wiki/Alps_of_Albania_National_Park"
+    },
+    {
+      "title": "Peaks of the Balkans: Theth–Valbona stage",
+      "url": "https://peaksofthebalkans.info/?p=1817"
+    },
+    {
+      "title": "UK FCDO: travel advice for Albania",
+      "url": "https://www.gov.uk/foreign-travel-advice/albania"
+    }
   ],
   "updated": "2026-11-23",
   "reviewed": "2026-11-23"

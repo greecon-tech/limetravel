@@ -241,3 +241,29 @@ test('destinacione dhe aktivitete: indekse, faqe, SEO/AEO, sitemap dhe navigim',
   const sitemap = await (await get(server, '/sitemap.xml')).text();
   assert.ok(sitemap.includes('/destinacione/alpet-shqiptare-theth-valbone') && sitemap.includes('/en/activities/hiking-in-albania'));
 });
+
+test('foto të licencuara me kredit, hartë interaktive pas klikimit dhe CSP për pllakat', async (t) => {
+  const server = await listen({});
+  t.after(() => server.close());
+  const { loadGuides, guideUrl, photos } = require('../lib/guides');
+  const ok = /^(CC BY(-SA)? [0-9.]+|CC0|Public domain)$/;
+  for (const [id, ph] of Object.entries(photos)) {
+    assert.ok(ok.test(ph.license) && ph.author && /^https:\/\/creativecommons\.org\//.test(ph.license_url) && /^https:\/\/commons\.wikimedia\.org\/wiki\/File:/.test(ph.source), id);
+    const fs = require('node:fs');
+    const path = require('node:path');
+    for (const f of [`${id}-800.webp`, `${id}-1800.webp`, `${id}-og.jpg`]) assert.ok(fs.existsSync(path.join(__dirname, '..', 'public', 'assets', 'img', 'places', f)), f);
+  }
+  const first = await get(server, '/');
+  assert.match(first.headers.get('content-security-policy'), /img-src 'self' data: https:\/\/tile\.openstreetmap\.org/);
+  const home = await (await first.text());
+  assert.ok(home.includes('Ekki3') && home.includes('creativecommons.org/licenses/by-sa/4.0') && !home.includes('hero-1000'));
+  for (const g of loadGuides()) {
+    const html = await (await get(server, guideUrl(g))).text();
+    assert.ok(html.includes('class="guide-photo"') && html.includes('rel="noopener">CC BY'), guideUrl(g));
+    assert.ok(html.includes(`/assets/img/places/${g.photo}-og.jpg`), guideUrl(g));
+    assert.ok(html.includes('data-map-load') && html.includes('/assets/js/map.js') && !html.includes('openstreetmap.org/tile'), guideUrl(g));
+    assert.ok(!/<script[^>]+tile\.openstreetmap/.test(html), 'asnjë ngarkim i pllakave para klikimit');
+  }
+  const priv = await (await get(server, '/privatesia')).text();
+  assert.ok(priv.includes('OpenStreetMap'));
+});

@@ -227,5 +227,6 @@
  "js.copied": "Nachricht kopiert. Sie können sie einfügen, wo Sie möchten, und uns senden.",
  "js.copy_failed": "Das automatische Kopieren hat nicht funktioniert. Die Nachricht ist markiert – kopieren Sie sie und senden Sie sie uns.",
  "header.destinacione": "Reiseziele",
- "header.aktivitete": "Aktivitäten"
+ "header.aktivitete": "Aktivitäten",
+ "privatesia.map-note": "Die Seiten der Reiseziele enthalten eine optionale Karte. Sie wird nur geladen, wenn Sie sie anzeigen lassen; dann verbindet sich Ihr Browser mit den Servern von OpenStreetMap, die Ihre IP-Adresse sehen können."
 }

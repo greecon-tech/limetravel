@@ -1,0 +1,80 @@
+{
+ "home-himara": {
+  "width": 1800,
+  "height": 1200,
+  "alt": {
+   "en": "Himara bay on the Albanian Riviera, seen from the south",
+   "sq": "Gjiri i Himarës në Rivierën Shqiptare, parë nga jugu"
+  },
+  "title": "Blick auf Himarë von Süden.jpg",
+  "author": "Ekki3",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "source": "https://commons.wikimedia.org/wiki/File:Blick_auf_Himar%C3%AB_von_S%C3%BCden.jpg"
+ },
+ "albanian-alps": {
+  "width": 1800,
+  "height": 1200,
+  "alt": {
+   "en": "A ridge above the Valbona valley in the Albanian Alps",
+   "sq": "Një kreshtë mbi luginën e Valbonës në Alpet Shqiptare"
+  },
+  "title": "2024-10-14 Valbona Pass 1.jpg",
+  "author": "Alexkom000",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "source": "https://commons.wikimedia.org/wiki/File:2024-10-14_Valbona_Pass_1.jpg"
+ },
+ "albanian-riviera": {
+  "width": 1800,
+  "height": 1350,
+  "alt": {
+   "en": "A beach on the Ionian coast below the Llogara mountains",
+   "sq": "Një plazh në bregdetin Jonian nën malet e Llogarasë"
+  },
+  "title": "Llogara dhe deti Jon.jpg",
+  "author": "Ledio Karaj",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "source": "https://commons.wikimedia.org/wiki/File:Llogara_dhe_deti_Jon.jpg"
+ },
+ "southern-heritage": {
+  "width": 1800,
+  "height": 1334,
+  "alt": {
+   "en": "Rooftops of the old town of Berat",
+   "sq": "Çatitë e qytetit të vjetër të Beratit"
+  },
+  "title": "140 Air view of the neighbhorhood towards Helveti Tekke Berat.jpg",
+  "author": "Arianit",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "source": "https://commons.wikimedia.org/wiki/File:140_Air_view_of_the_neighbhorhood_towards_Helveti_Tekke_Berat.jpg"
+ },
+ "hiking-albania": {
+  "width": 1800,
+  "height": 1200,
+  "alt": {
+   "en": "A hiking trail with the Albanian Alps in the background",
+   "sq": "Një shteg ecjeje me Alpet Shqiptare në sfond"
+  },
+  "title": "2024-10-14 Valbona Valley 1.jpg",
+  "author": "Alexkom000",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "source": "https://commons.wikimedia.org/wiki/File:2024-10-14_Valbona_Valley_1.jpg"
+ },
+ "cultural-discovery": {
+  "width": 1800,
+  "height": 1350,
+  "alt": {
+   "en": "Gjirokastër at dusk, with the castle above the old town",
+   "sq": "Gjirokastra në muzg, me kalanë mbi qytetin e vjetër"
+  },
+  "title": "Gjirokastër - Altstadt 1.jpg",
+  "author": "Wolfgang Sauber",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "source": "https://commons.wikimedia.org/wiki/File:Gjirokast%C3%ABr_-_Altstadt_1.jpg"
+ }
+}

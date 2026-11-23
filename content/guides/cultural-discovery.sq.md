@@ -10,27 +10,99 @@
   "summary": "Zbulimi kulturor në Shqipëri sjell së bashku Beratin dhe Gjirokastrën, dy qendra historike në Listën e UNESCO-s, dhe Butrintin në bregdet. Pranvera dhe vjeshta zakonisht rekomandohen. Orari dhe çmimet e hyrjeve kontrollohen në vend.",
   "region": "Në të gjithë Shqipërinë",
   "order": 5,
+  "photo": "cultural-discovery",
+  "map": {
+    "line": false,
+    "stops": [
+      {
+        "name": "Berat",
+        "lat": 40.7019,
+        "lon": 19.9581
+      },
+      {
+        "name": "Gjirokastër",
+        "lat": 40.0771,
+        "lon": 20.1393
+      },
+      {
+        "name": "Butrint",
+        "lat": 39.7459,
+        "lon": 20.021
+      }
+    ]
+  },
   "facts": [
-    { "label": "Vende kryesore", "value": "Berat, Gjirokastër, Butrint" },
-    { "label": "UNESCO", "value": "Qendrat historike të Beratit dhe Gjirokastrës; Butrint" },
-    { "label": "Sezoni më i mirë", "value": "Pranverë dhe vjeshtë, sipas udhëzuesish; vera është e nxehtë dhe e mbushur" },
-    { "label": "Koha e rekomanduar", "value": "Të paktën 3 ditë për Berat, Gjirokastër dhe Butrint së bashku" },
-    { "label": "Këshillë", "value": "Rrugë me kalldrëm; orari dhe çmimet kontrollohen në vend" }
+    {
+      "label": "Vende kryesore",
+      "value": "Berat, Gjirokastër, Butrint"
+    },
+    {
+      "label": "UNESCO",
+      "value": "Qendrat historike të Beratit dhe Gjirokastrës; Butrint"
+    },
+    {
+      "label": "Sezoni më i mirë",
+      "value": "Pranverë dhe vjeshtë, sipas udhëzuesish; vera është e nxehtë dhe e mbushur"
+    },
+    {
+      "label": "Koha e rekomanduar",
+      "value": "Të paktën 3 ditë për Berat, Gjirokastër dhe Butrint së bashku"
+    },
+    {
+      "label": "Këshillë",
+      "value": "Rrugë me kalldrëm; orari dhe çmimet kontrollohen në vend"
+    }
   ],
-  "related": ["southern-heritage", "albanian-riviera", "hiking-albania"],
-  "tags": ["trashëgimi", "UNESCO", "Berat", "Gjirokastër"],
+  "related": [
+    "southern-heritage",
+    "albanian-riviera",
+    "hiking-albania"
+  ],
+  "tags": [
+    "trashëgimi",
+    "UNESCO",
+    "Berat",
+    "Gjirokastër"
+  ],
   "faq": [
-    { "q": "Cilat janë vendet kulturore më të njohura në Shqipëri?", "a": "Berat dhe Gjirokastra, qendra historike të Listës së UNESCO-s, dhe Butrint, vend i Trashëgimisë Botërore në bregdetin e jugut." },
-    { "q": "Sa ditë duhen për t'i parë?", "a": "Berat mund të shihet në një ditë të gjatë nga Tirana. Për të dy qytetet dhe Butrintin, planifikoni të paktën 3 ditë, sepse distancat midis tyre janë të gjata." },
-    { "q": "Kur është koha më e mirë?", "a": "Udhëzuesit zakonisht rekomandojnë pranverën dhe vjeshtën, sepse vera është e nxehtë dhe e mbushur." },
-    { "q": "A ka orare dhe çmime zyrtare të publikuara?", "a": "Nuk gjetëm orare dhe çmime zyrtare të publikuara në burimet që lexuam. Kontrolloni në vend ose pyesni ne para udhëtimit." }
+    {
+      "q": "Cilat janë vendet kulturore më të njohura në Shqipëri?",
+      "a": "Berat dhe Gjirokastra, qendra historike të Listës së UNESCO-s, dhe Butrint, vend i Trashëgimisë Botërore në bregdetin e jugut."
+    },
+    {
+      "q": "Sa ditë duhen për t'i parë?",
+      "a": "Berat mund të shihet në një ditë të gjatë nga Tirana. Për të dy qytetet dhe Butrintin, planifikoni të paktën 3 ditë, sepse distancat midis tyre janë të gjata."
+    },
+    {
+      "q": "Kur është koha më e mirë?",
+      "a": "Udhëzuesit zakonisht rekomandojnë pranverën dhe vjeshtën, sepse vera është e nxehtë dhe e mbushur."
+    },
+    {
+      "q": "A ka orare dhe çmime zyrtare të publikuara?",
+      "a": "Nuk gjetëm orare dhe çmime zyrtare të publikuara në burimet që lexuam. Kontrolloni në vend ose pyesni ne para udhëtimit."
+    }
   ],
   "sources": [
-    { "title": "AKT: Berat", "url": "https://akt.gov.al/en/cities/berat/" },
-    { "title": "AKT: Gjirokastër", "url": "https://akt.gov.al/en/cities/gjirokaster/" },
-    { "title": "AKT: Butrint, mikrokozmos i Mesdheut", "url": "https://akt.gov.al/en/unesco/Butrint--a-microcosm-of-the-Mediterranean--a-UNESCO-heritage-site/" },
-    { "title": "Wikipedia: Qendrat historike të Beratit dhe Gjirokastrës (UNESCO)", "url": "https://en.wikipedia.org/wiki/Historic_Centres_of_Berat_and_Gjirokast%C3%ABr" },
-    { "title": "Wikipedia: Butrint", "url": "https://en.wikipedia.org/wiki/Butrint" }
+    {
+      "title": "AKT: Berat",
+      "url": "https://akt.gov.al/en/cities/berat/"
+    },
+    {
+      "title": "AKT: Gjirokastër",
+      "url": "https://akt.gov.al/en/cities/gjirokaster/"
+    },
+    {
+      "title": "AKT: Butrint, mikrokozmos i Mesdheut",
+      "url": "https://akt.gov.al/en/unesco/Butrint--a-microcosm-of-the-Mediterranean--a-UNESCO-heritage-site/"
+    },
+    {
+      "title": "Wikipedia: Qendrat historike të Beratit dhe Gjirokastrës (UNESCO)",
+      "url": "https://en.wikipedia.org/wiki/Historic_Centres_of_Berat_and_Gjirokast%C3%ABr"
+    },
+    {
+      "title": "Wikipedia: Butrint",
+      "url": "https://en.wikipedia.org/wiki/Butrint"
+    }
   ],
   "updated": "2026-11-23",
   "reviewed": "2026-11-23"

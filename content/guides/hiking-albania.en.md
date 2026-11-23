@@ -10,29 +10,107 @@
   "summary": "Hiking in Albania centres on the Albanian Alps, but there are also Llogara and coastal trails. The practical season in the Alps is roughly June to September. The Theth–Valbona hike is about 14–16 km; Peaks of the Balkans is a 192 km route through Albania, Kosovo and Montenegro.",
   "region": "Across Albania",
   "order": 4,
+  "photo": "hiking-albania",
+  "map": {
+    "line": false,
+    "stops": [
+      {
+        "name": "Theth",
+        "lat": 42.3947,
+        "lon": 19.7751
+      },
+      {
+        "name": "Valbona",
+        "lat": 42.417,
+        "lon": 20.0094
+      },
+      {
+        "name": "Llogara",
+        "lat": 40.213,
+        "lon": 19.5753
+      }
+    ]
+  },
   "facts": [
-    { "label": "Main areas", "value": "The Albanian Alps (Theth and Valbona) and Llogara National Park" },
-    { "label": "Theth–Valbona hike", "value": "About 14–16 km, about 6–8 hours, moderate (according to sources; figures vary)" },
-    { "label": "Peaks of the Balkans", "value": "A 192 km circular route, 10 stages, through Albania, Kosovo and Montenegro; border permits required" },
-    { "label": "Season in the Alps", "value": "Roughly June to September; snow risk in winter" },
-    { "label": "Emergencies", "value": "112" }
+    {
+      "label": "Main areas",
+      "value": "The Albanian Alps (Theth and Valbona) and Llogara National Park"
+    },
+    {
+      "label": "Theth–Valbona hike",
+      "value": "About 14–16 km, about 6–8 hours, moderate (according to sources; figures vary)"
+    },
+    {
+      "label": "Peaks of the Balkans",
+      "value": "A 192 km circular route, 10 stages, through Albania, Kosovo and Montenegro; border permits required"
+    },
+    {
+      "label": "Season in the Alps",
+      "value": "Roughly June to September; snow risk in winter"
+    },
+    {
+      "label": "Emergencies",
+      "value": "112"
+    }
   ],
-  "related": ["albanian-alps", "albanian-riviera", "cultural-discovery"],
-  "tags": ["hiking", "Albanian Alps", "Peaks of the Balkans", "nature"],
+  "related": [
+    "albanian-alps",
+    "albanian-riviera",
+    "cultural-discovery"
+  ],
+  "tags": [
+    "hiking",
+    "Albanian Alps",
+    "Peaks of the Balkans",
+    "nature"
+  ],
   "faq": [
-    { "q": "Where can you hike in Albania?", "a": "The best-known area is the Albanian Alps, with Theth and Valbona. There is also Llogara National Park and coastal trails in the south, described in a GIZ document published by the Albanian tourism agency." },
-    { "q": "When is the hiking season?", "a": "In the Alps, roughly June to September, sometimes into early October. Outside the season there is a risk of snow and many guesthouses close." },
-    { "q": "What is Peaks of the Balkans?", "a": "A 192 km circular route through Albania, Kosovo and Montenegro, with 10 stages. Its pages say border permits are required; sources differ on the procedure, so check before you plan." },
-    { "q": "What should I bring?", "a": "The Theth–Valbona stage page advises enough water, good boots and avoiding bad weather. Also bring clothing for changing weather." },
-    { "q": "Is it safe to hike alone?", "a": "In remote areas the emergency response can be slow. Tell your host your route, do not hike in unsettled weather and, if you are unsure, choose a licensed guide." }
+    {
+      "q": "Where can you hike in Albania?",
+      "a": "The best-known area is the Albanian Alps, with Theth and Valbona. There is also Llogara National Park and coastal trails in the south, described in a GIZ document published by the Albanian tourism agency."
+    },
+    {
+      "q": "When is the hiking season?",
+      "a": "In the Alps, roughly June to September, sometimes into early October. Outside the season there is a risk of snow and many guesthouses close."
+    },
+    {
+      "q": "What is Peaks of the Balkans?",
+      "a": "A 192 km circular route through Albania, Kosovo and Montenegro, with 10 stages. Its pages say border permits are required; sources differ on the procedure, so check before you plan."
+    },
+    {
+      "q": "What should I bring?",
+      "a": "The Theth–Valbona stage page advises enough water, good boots and avoiding bad weather. Also bring clothing for changing weather."
+    },
+    {
+      "q": "Is it safe to hike alone?",
+      "a": "In remote areas the emergency response can be slow. Tell your host your route, do not hike in unsettled weather and, if you are unsure, choose a licensed guide."
+    }
   ],
   "sources": [
-    { "title": "AKZM: Alps National Park", "url": "https://akzm.gov.al/parku-kombetar-i-alpeve/" },
-    { "title": "Peaks of the Balkans: Theth–Valbona stage", "url": "https://peaksofthebalkans.info/?p=1817" },
-    { "title": "Peaks of the Balkans: route description", "url": "https://peaksofthebalkans.info/?p=2736" },
-    { "title": "Wikipedia: Llogara National Park", "url": "https://en.wikipedia.org/wiki/Llogara_National_Park" },
-    { "title": "AKT: Southern Coastal Trail descriptions (PDF)", "url": "https://akt.gov.al/wp-content/uploads/2022/06/Southern-Coastal-Trail-Descriptions-Final-Version.pdf" },
-    { "title": "UK FCDO: travel advice for Albania", "url": "https://www.gov.uk/foreign-travel-advice/albania" }
+    {
+      "title": "AKZM: Alps National Park",
+      "url": "https://akzm.gov.al/parku-kombetar-i-alpeve/"
+    },
+    {
+      "title": "Peaks of the Balkans: Theth–Valbona stage",
+      "url": "https://peaksofthebalkans.info/?p=1817"
+    },
+    {
+      "title": "Peaks of the Balkans: route description",
+      "url": "https://peaksofthebalkans.info/?p=2736"
+    },
+    {
+      "title": "Wikipedia: Llogara National Park",
+      "url": "https://en.wikipedia.org/wiki/Llogara_National_Park"
+    },
+    {
+      "title": "AKT: Southern Coastal Trail descriptions (PDF)",
+      "url": "https://akt.gov.al/wp-content/uploads/2022/06/Southern-Coastal-Trail-Descriptions-Final-Version.pdf"
+    },
+    {
+      "title": "UK FCDO: travel advice for Albania",
+      "url": "https://www.gov.uk/foreign-travel-advice/albania"
+    }
   ],
   "updated": "2026-11-23",
   "reviewed": "2026-11-23"

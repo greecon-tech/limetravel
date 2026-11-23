@@ -58,7 +58,7 @@ const COMPRESSIBLE = new Set(['.html', '.css', '.js', '.svg', '.xml', '.txt', '.
 
 const SECURITY_HEADERS = {
   'Content-Security-Policy':
-    "default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'self'; " +
+    "default-src 'self'; img-src 'self' data: https://tile.openstreetmap.org; style-src 'self'; script-src 'self'; font-src 'self'; " +
     "connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'",
   'X-Content-Type-Options': 'nosniff',
   'X-Frame-Options': 'DENY',
@@ -247,6 +247,9 @@ function buildSite(config = readConfig()) {
       LANG: lang.code,
       OG_LOCALE: lang.og,
       OG_TYPE: 'website',
+      OG_IMAGE: config.SITE_URL + '/assets/img/og.jpg',
+      OG_IMAGE_ALT: 'LimeTravel',
+      HERO_CREDIT: guides.creditLine('home-himara', lang.code),
       HOME: pageUrl(lang, 'home'),
       P_DOCTRINE: pageUrl(lang, 'doctrine'),
       P_PRIVACY: pageUrl(lang, 'privacy'),
@@ -342,6 +345,7 @@ function buildSite(config = readConfig()) {
         url,
         guides.guideSource(guide, guideList, config.SITE_URL),
         contextFor(lang, url, {
+          ...(guides.ogImage(guide) ? { OG_IMAGE: config.SITE_URL + guides.ogImage(guide), OG_IMAGE_ALT: guide.name } : {}),
           HREFLANG: alternateLinks(
             versions.filter((v) => v.guide).map((v) => ({ code: v.lang.code, url: guides.guideUrl(v.guide) })),
             config.SITE_URL,

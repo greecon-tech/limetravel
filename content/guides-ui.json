@@ -14,7 +14,10 @@
       "index_h1": "Aktivitete në Shqipëri.",
       "index_lead": "Mënyra për ta njohur Shqipërinë: ecje në natyrë, qytete trashëgimie dhe më shumë. Çdo faqe ka burime dhe datën e rishikimit."
     },
-    "kinds": { "destination": "Destinacion", "activity": "Aktivitet" },
+    "kinds": {
+      "destination": "Destinacion",
+      "activity": "Aktivitet"
+    },
     "glance": "Në një vështrim",
     "summary": "Shkurt",
     "contents": "Në këtë faqe",
@@ -35,7 +38,14 @@
     "read_more": "Shiko më shumë",
     "latest_title": "Destinacione në Shqipëri",
     "all_destinations": "Të gjitha destinacionet",
-    "wa_text": "Përshëndetje LimeTravel! Më intereson: {title}. Mund të më propozoni opsione?"
+    "wa_text": "Përshëndetje LimeTravel! Më intereson: {title}. Mund të më propozoni opsione?",
+    "map_title": "Harta e itinerarit",
+    "map_note": "Harta ngarkohet nga OpenStreetMap vetëm kur e shfaqni. Në atë moment shfletuesi juaj lidhet me serverët e OpenStreetMap.",
+    "map_button": "Shfaq hartën interaktive",
+    "map_hint": "Vijat midis pikave janë orientuese, jo rrugë të sakta. Koordinatat vijnë nga të dhënat e OpenStreetMap.",
+    "stops": "Pikat në hartë",
+    "day": "Dita {n}",
+    "photo_label": "Foto"
   },
   "en": {
     "destination": {
@@ -52,7 +62,10 @@
       "index_h1": "Activities in Albania.",
       "index_lead": "Ways to get to know Albania: hiking, heritage towns and more. Every page cites its sources and shows when it was last reviewed."
     },
-    "kinds": { "destination": "Destination", "activity": "Activity" },
+    "kinds": {
+      "destination": "Destination",
+      "activity": "Activity"
+    },
     "glance": "At a glance",
     "summary": "In short",
     "contents": "On this page",
@@ -73,6 +86,13 @@
     "read_more": "See more",
     "latest_title": "Destinations in Albania",
     "all_destinations": "All destinations",
-    "wa_text": "Hello LimeTravel! I am interested in: {title}. Could you propose some options?"
+    "wa_text": "Hello LimeTravel! I am interested in: {title}. Could you propose some options?",
+    "map_title": "Itinerary map",
+    "map_note": "The map loads from OpenStreetMap only when you show it. At that point your browser connects to OpenStreetMap servers.",
+    "map_button": "Show the interactive map",
+    "map_hint": "Lines between points are indicative, not exact roads. Coordinates come from OpenStreetMap data.",
+    "stops": "Points on the map",
+    "day": "Day {n}",
+    "photo_label": "Photo"
   }
 }
