@@ -54,6 +54,10 @@ Regulation (EC) No 261/2004 gives passengers rights when a flight is cancelled, 
 
 Compensation applies to a delay of more than 3 hours on arrival (according to EU Court of Justice case law), to a cancellation announced less than 14 days before departure and to denied boarding. It is not due where the cause is an extraordinary circumstance.
 
+## What rights does a passenger have besides compensation?
+
+The regulation is not only about money. According to the Council of the EU and the EUR-Lex summary, passengers whose flight is cancelled or badly delayed are entitled to choose between a refund of the ticket and re-routing to their final destination. While waiting, the airline must provide reasonable care, such as meals and drinks and, where needed, accommodation. These rights are separate from compensation and do not depend on extraordinary circumstances, but they apply only where the regulation applies to your flight, as the table below shows.
+
 ## Are flights to and from Albania covered?
 
 This is the question Albanian passengers ask most, and the answer depends on Article 3(1) of the regulation. According to the text, the regulation applies to:

@@ -54,6 +54,10 @@ Rregullorja (KE) nr. 261/2004 u jep pasagjerëve të drejta në rast anulimi të
 
 Kompensimi vlen për vonesë në mbërritje mbi 3 orë (sipas jurisprudencës së Gjykatës së BE-së), për anulim të njoftuar me më pak se 14 ditë para nisjes dhe për refuzim të hipjes. Nuk jepet kur shkaku është një rrethanë e jashtëzakonshme.
 
+## Çfarë të drejtash ka pasagjeri përveç kompensimit?
+
+Rregullorja nuk flet vetëm për para. Sipas Këshillit të BE-së dhe përmbledhjes në EUR-Lex, pasagjerët që kanë një fluturim të anuluar ose të vonuar shumë kanë të drejtë të zgjedhin midis rimbursimit të biletës dhe ridrejtimit drejt destinacionit përfundimtar. Gjatë pritjes, kompania duhet të ofrojë kujdes të arsyeshëm, si ushqim e pije dhe, kur nevojitet, akomodim. Këto të drejta janë të ndara nga kompensimi dhe nuk varen nga rrethanat e jashtëzakonshme, por vlejnë vetëm kur rregullorja aplikohet në fluturimin tuaj, sipas tabelës më poshtë.
+
 ## A mbulohen fluturimet nga dhe drejt Shqipërisë?
 
 Kjo është pyetja më e shpeshtë për pasagjerët shqiptarë, dhe përgjigjja varet nga neni 3(1) i rregullores. Sipas tekstit, rregullorja vlen për:
