@@ -7,8 +7,8 @@
   "description": "What Albanian travellers need to know about the EU Entry/Exit System (fully live since 10 April 2026) and ETIAS, which has no start date yet. Official sources.",
   "summary": "ETIAS is not yet in operation and cannot be applied for; the EU says it will announce the start date several months in advance. The Entry/Exit System, which records a photo and fingerprints at the border, has been fully in place since 10 April 2026 and covers non-EU nationals on short stays, including Albanian citizens.",
   "date": "2026-11-23",
-  "updated": "2026-11-23",
-  "reviewed": "2026-11-23",
+  "updated": "2026-11-24",
+  "reviewed": "2026-11-24",
   "tags": ["ETIAS", "EES", "Schengen", "Albanian passport"],
   "faq": [
     {
@@ -17,7 +17,7 @@
     },
     {
       "q": "When will ETIAS start?",
-      "a": "No date has been set. The official site says the EU will announce the start date several months before launch. The earlier target was the end of 2026, but as of 23 November 2026 no start date has been officially announced."
+      "a": "No date has been set. The official site says the EU will announce the start date several months before launch. The earlier target was the end of 2026; a Polish government notice from September 2026 speaks of 2027, but as of 24 November 2026 we have found no start date announced by the EU."
     },
     {
       "q": "How much will ETIAS cost and how long is it valid?",
@@ -42,6 +42,7 @@
     { "title": "EU Delegation to Albania: information on ETIAS", "url": "https://www.eeas.europa.eu/delegations/albania/information-european-travel-information-and-authorisation-system-etias-0_en" },
     { "title": "European Commission: ETIAS will cost EUR 20 (17 July 2025)", "url": "https://home-affairs.ec.europa.eu/news/european-travel-authorisation-etias-will-cost-eur-20-2025-07-17_en" },
     { "title": "Official EU travel portal: ETIAS", "url": "https://travel-europe.europa.eu/etias_en" },
+    { "title": "Government of Poland: ETIAS planned for 2027 (18 September 2026)", "url": "https://www.gov.pl/web/venezuela-en/introduction-of-etias-in-2027-upcoming-changes-to-travel-requirements-for-the-schengen-area-and-cyprus" },
     { "title": "Travelweek: more than 150 fake ETIAS websites (16 October 2026)", "url": "https://www.travelweek.ca/news/destinations/more-than-150-fake-etias-websites-prompt-traveller-warning/" }
   ]
 }
@@ -67,7 +68,7 @@ ETIAS (European Travel Information and Authorisation System) is a travel authori
 
 ## When will ETIAS start?
 
-As of 23 November 2026 no start date has been announced. The official EU site says the system is “currently not in operation”, that no applications are being collected, and that the EU will announce the start date several months before launch. The Commission’s earlier target was the end of 2026. Some media report a delay to 2027, but this has not been officially confirmed, so we do not treat it as fact.
+As of 24 November 2026 no start date has been announced by the EU. The official EU site says the system is “currently not in operation”, that no applications are being collected, and that the EU will announce the start date several months before launch. The Commission’s earlier target was the end of 2026. A Polish government notice dated 18 September 2026 says the launch is planned for 2027, with the date to be communicated later. That is a national source, not a start date announced by the EU, so we do not treat it as a confirmed date.
 
 Practical advice: do not plan anything on the assumption that ETIAS starts on a particular date. We will update this article when a date is announced.
 
@@ -82,7 +83,7 @@ According to the same page the authorisation is valid for 3 years and allows mul
 | Aspect | EES | ETIAS |
 |---|---|---|
 | What it is | Photo and fingerprints recorded at the border | Travel authorisation requested online before travel |
-| Status on 23 November 2026 | Fully in force since 10 April 2026 | Not in operation; start date not announced |
+| Status on 24 November 2026 | Fully in force since 10 April 2026 | Not in operation; start date not announced |
 | When it happens | At the border, during the check | Before departure, on the official website |
 | Who it applies to | Non-EU nationals on short stays | Nationals of visa-free countries, including Albania |
 

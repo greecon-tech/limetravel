@@ -7,8 +7,8 @@
   "description": "Çfarë duhet të dinë shqiptarët për EES, në fuqi plotësisht që nga 10 prill 2026, dhe për ETIAS, që ende nuk ka datë nisjeje. Me burime zyrtare.",
   "summary": "ETIAS nuk është ende në funksion dhe nuk mund të aplikohet për të; BE-ja do ta shpallë datën disa muaj para nisjes. EES, që regjistron fotografinë dhe gjurmët e gishtave në kufi, funksionon plotësisht që nga 10 prill 2026 dhe vlen për shtetasit jo-BE në qëndrime të shkurtra, përfshirë shqiptarët.",
   "date": "2026-11-23",
-  "updated": "2026-11-23",
-  "reviewed": "2026-11-23",
+  "updated": "2026-11-24",
+  "reviewed": "2026-11-24",
   "tags": ["ETIAS", "EES", "Schengen", "udhëtime nga Shqipëria"],
   "faq": [
     {
@@ -17,7 +17,7 @@
     },
     {
       "q": "Kur do të nisë ETIAS?",
-      "a": "Data nuk është caktuar. Faqja zyrtare thotë se BE-ja do të njoftojë datën e nisjes disa muaj para fillimit. Objektivi i mëparshëm ishte fundi i vitit 2026, por deri më 23 nëntor 2026 nuk ka një datë të shpallur zyrtarisht."
+      "a": "Data nuk është caktuar. Faqja zyrtare thotë se BE-ja do të njoftojë datën e nisjes disa muaj para fillimit. Objektivi i mëparshëm ishte fundi i vitit 2026; një njoftim i qeverisë polake i shtatorit 2026 flet për 2027, por deri më 24 nëntor 2026 nuk kemi gjetur një datë të shpallur nga BE-ja."
     },
     {
       "q": "Sa do të kushtojë ETIAS dhe sa vlen?",
@@ -42,6 +42,7 @@
     { "title": "Delegacioni i BE-së në Shqipëri: informacion për ETIAS", "url": "https://www.eeas.europa.eu/delegations/albania/information-european-travel-information-and-authorisation-system-etias-0_en" },
     { "title": "Komisioni Evropian: ETIAS do të kushtojë 20 euro (17 korrik 2025)", "url": "https://home-affairs.ec.europa.eu/news/european-travel-authorisation-etias-will-cost-eur-20-2025-07-17_en" },
     { "title": "Portali zyrtar i BE-së për udhëtimin: ETIAS", "url": "https://travel-europe.europa.eu/etias_en" },
+    { "title": "Qeveria e Polonisë: ETIAS planifikohet për 2027 (18 shtator 2026)", "url": "https://www.gov.pl/web/venezuela-en/introduction-of-etias-in-2027-upcoming-changes-to-travel-requirements-for-the-schengen-area-and-cyprus" },
     { "title": "Travelweek: mbi 150 faqe të rreme ETIAS (16 tetor 2026)", "url": "https://www.travelweek.ca/news/destinations/more-than-150-fake-etias-websites-prompt-traveller-warning/" }
   ]
 }
@@ -67,7 +68,7 @@ ETIAS (European Travel Information and Authorisation System) është një autori
 
 ## Kur do të nisë ETIAS?
 
-Deri më 23 nëntor 2026 një datë nisjeje nuk është shpallur. Faqja zyrtare e BE-së thotë se sistemi “nuk është aktualisht në funksion”, se nuk po mblidhen aplikime dhe se BE-ja do të njoftojë datën e nisjes disa muaj para fillimit. Objektivi i mëparshëm i Komisionit ishte fundi i vitit 2026. Disa media raportojnë një shtyrje në 2027, por kjo nuk është konfirmuar zyrtarisht, ndaj nuk e trajtojmë si fakt.
+Deri më 24 nëntor 2026 një datë nisjeje nuk është shpallur nga BE-ja. Faqja zyrtare e BE-së thotë se sistemi “nuk është aktualisht në funksion”, se nuk po mblidhen aplikime dhe se BE-ja do të njoftojë datën e nisjes disa muaj para fillimit. Objektivi i mëparshëm i Komisionit ishte fundi i vitit 2026. Një njoftim i qeverisë polake i datës 18 shtator 2026 thotë se nisja është planifikuar për 2027, me datën që do të komunikohet më vonë. Kjo është një burim kombëtar, jo një datë e shpallur nga BE-ja, ndaj nuk e trajtojmë si datë të konfirmuar.
 
 Rekomandimi praktik: mos planifikoni asgjë mbi supozimin se ETIAS nis në një datë të caktuar. Kur data të shpallet, do ta përditësojmë këtë artikull.
 
@@ -82,7 +83,7 @@ Sipas të njëjtës faqe, autorizimi vlen 3 vjet dhe lejon hyrje të shumëfisht
 | Aspekti | EES | ETIAS |
 |---|---|---|
 | Çfarë është | Regjistrim i fotografisë dhe i gjurmëve të gishtave në kufi | Autorizim udhëtimi, i kërkuar online para udhëtimit |
-| Statusi më 23 nëntor 2026 | Në fuqi plotësisht që nga 10 prill 2026 | Jo në funksion; data e nisjes nuk është shpallur |
+| Statusi më 24 nëntor 2026 | Në fuqi plotësisht që nga 10 prill 2026 | Jo në funksion; data e nisjes nuk është shpallur |
 | Kur kryhet | Në kufi, gjatë kontrollit | Para nisjes, përmes faqes zyrtare |
 | Për kë vlen | Shtetasit jo-BE në qëndrime të shkurtra | Shtetasit e vendeve pa vizë, përfshirë Shqipërinë |
 

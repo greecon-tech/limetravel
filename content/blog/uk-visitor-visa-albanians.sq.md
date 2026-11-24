@@ -8,7 +8,7 @@
   "summary": "Shtetasit shqiptarë kanë nevojë për vizë për të vizituar Mbretërinë e Bashkuar; ETA nuk vlen për ta. Aplikimi bëhet online dhe pastaj jepen biometritë në qendrën e aplikimit. Vendimi zakonisht merret brenda 3 javësh dhe viza për 6 muaj kushton 135 paund sipas tabelës zyrtare të tarifave.",
   "date": "2026-11-23",
   "updated": "2026-11-23",
-  "reviewed": "2026-11-23",
+  "reviewed": "2026-11-24",
   "tags": ["viza", "Mbretëria e Bashkuar", "Standard Visitor", "udhëtime nga Shqipëria"],
   "faq": [
     {

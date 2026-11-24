@@ -4,7 +4,7 @@ Shtoni tema nga lajmet e industrisë, pyetjet që vijnë te WhatsApp/Instagram d
 
 ## Radha (sipas përparësisë)
 1. Bileta avioni nga Tirana: si t’i krahasosh, bagazhi dhe rregullat e check-in (burime: aeroporti, kompanitë ajrore)
-2. Viza turistike për SHBA nga Shqipëria: hapat, tarifa e vizës dhe intervista (burime: travel.state.gov, ambasada)
+2. Viza turistike për SHBA nga Shqipëria: hapat, tarifa e vizës dhe intervista (burime: travel.state.gov, ambasada). SHTYRË më 24.11.2026: travel.state.gov dhe al.usembassy.gov u bllokuan gjatë kërkimit; ri-provoni kur faqet lexohen drejtpërdrejt. Fakte të pakonfirmuara: tarifa $185 (vetëm nga përmbledhje), tarifa e integritetit $250 (nuk ka status zbatimi), vlefshmëria 36 vs 120 muaj, dokumentet zyrtare
 3. Viza për Kanadanë nga Shqipëria: kush e do, tarifat, biometria (burime: canada.ca)
 4. Udhëtim me fëmijë: dokumentet dhe autorizimi i prindit për dalje nga vendi (burime: Policia e Shtetit / BE)
 5. Pasaporta biometrike: vlefshmëria e kërkuar nga vendet Schengen dhe Britania (burime: ministria, BE)

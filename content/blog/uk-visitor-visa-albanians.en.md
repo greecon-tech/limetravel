@@ -8,7 +8,7 @@
   "summary": "Albanian citizens need a visa to visit the UK; the ETA does not apply to them. You apply online, then give biometrics at a visa application centre. A decision is usually made within 3 weeks, and the 6-month visa costs £135 according to the official fee table.",
   "date": "2026-11-23",
   "updated": "2026-11-23",
-  "reviewed": "2026-11-23",
+  "reviewed": "2026-11-24",
   "tags": ["UK visa", "Standard Visitor", "Albanian citizens", "travel documents"],
   "faq": [
     {
